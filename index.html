@@ -301,9 +301,11 @@
     }
 
     .typed-container {
-      display: inline-block;
-      position: relative;
-    }
+  display: inline-block;
+  width: 22ch;           /* reserve space for your longest phrase (≈22 characters) */
+  white-space: nowrap;   /* force it onto one line */
+  overflow: hidden;      /* hide any overflow during typing/deletion */
+}
 
     .typed-text {
       border-right: 2px solid var(--primary);
@@ -1159,15 +1161,15 @@
     }
 
     /* Media Queries */
-    @media (max-width: 1200px) {
-      .hero-content {
-        max-width: 500px;
-      }
-
+    @media (max-width: 576px) {
+  .typed-text {
+    font-size: 0.9rem;   /* adjust as needed */
+  }
+}
       .hero h1 {
         font-size: 3rem;
       }
-    }
+    
 
     @media (max-width: 992px) {
       .nav-links {
@@ -1335,7 +1337,12 @@
       </div>
 
       <div class="hero-content">
-        <h1>Fast & Affordable <span class="typed-container"><span class="typed-text" id="typed">Remittances</span></span></h1>
+        <h1>
+   Fast & Affordable<br/>
+   <span class="typed-container">
+     <span class="typed-text" id="typed"></span>
+   </span>
+ </h1>
         <p>Send money globally in seconds with blockchain-powered transfers and minimal fees.</p>
         
         <div class="feature-badges">
