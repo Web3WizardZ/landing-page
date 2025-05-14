@@ -237,7 +237,6 @@
       background: linear-gradient(to right, rgba(79, 70, 229, 0.1), rgba(236, 72, 153, 0.1));
       padding: 0 1rem;
       overflow: hidden;
-      justify-content: space-between;
     }
 
     .blob-container {
@@ -302,11 +301,9 @@
     }
 
     .typed-container {
-  display: inline-block;
-  width: 22ch;           /* reserve space for your longest phrase (≈22 characters) */
-  white-space: nowrap;   /* force it onto one line */
-  overflow: hidden;      /* hide any overflow during typing/deletion */
-}
+      display: inline-block;
+      position: relative;
+    }
 
     .typed-text {
       border-right: 2px solid var(--primary);
@@ -1162,15 +1159,15 @@
     }
 
     /* Media Queries */
-    @media (max-width: 576px) {
-  .typed-text {
-    font-size: 1.5rem;   /* adjust as needed */
-  }
-}
+    @media (max-width: 1200px) {
+      .hero-content {
+        max-width: 500px;
+      }
+
       .hero h1 {
         font-size: 3rem;
       }
-    
+    }
 
     @media (max-width: 992px) {
       .nav-links {
@@ -1339,11 +1336,11 @@
 
       <div class="hero-content">
         <h1>
-            Fast & Affordable<br/>
-            <span class="typed-container">
-            <span class="typed-text" id="typed"></span>
-            </span>
-        </h1>
++   Fast & Affordable<br/>
++   <span class="typed-container">
++     <span class="typed-text" id="typed"></span>
++   </span>
++ </h1>
         <p>Send money globally in seconds with blockchain-powered transfers and minimal fees.</p>
         
         <div class="feature-badges">
