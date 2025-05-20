@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "landing/index.html", "use": "@vercel/static" },
+    { "src": "package.json",        "use": "@vercel/next"   }
+  ],
+  "routes": [
+    { "src": "/",         "dest": "/landing/index.html" },
+    { "src": "/app/(.*)", "dest": "/$1"                  },
+    { "src": "/(.*\\.(png|jpg|svg|css|js))", "dest": "/landing/$1" }
+  ]
+}
