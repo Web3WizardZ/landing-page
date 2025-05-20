@@ -10,3 +10,4 @@
     { "src": "/(.*\\.(png|jpg|svg|css))","dest": "/landing/$1"            }
   ]
 }
+ 
