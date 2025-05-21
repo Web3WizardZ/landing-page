@@ -1,7 +1,13 @@
-import type { NextConfig } from "next";
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
 
-const nextConfig: NextConfig = {
-  /* config options here */
-};
+  // everything in your Next app
+  // will be served under /app
+  basePath: '/app',
 
-export default nextConfig;
+  // make sure your static assets (_next/*) also live under /app
+  assetPrefix: '/app',
+}
+
+module.exports = nextConfig
