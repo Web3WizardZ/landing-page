@@ -1,8 +1,8 @@
 {
   "version": 2,
   "builds": [
--   { "src": "landing/index.html",       "use": "@vercel/static" },
-+   { "src": "landing/**",                "use": "@vercel/static" },
+   { "src": "landing/index.html",       "use": "@vercel/static" },
+   { "src": "landing/**",                "use": "@vercel/static" },
     { "src": "app/package.json",         "use": "@vercel/next"  }
   ],
   "routes": [
