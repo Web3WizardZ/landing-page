@@ -1,13 +1,25 @@
 {
   "version": 2,
   "builds": [
-    { "src": "landing/index.html",       "use": "@vercel/static" },
+-   { "src": "landing/index.html",       "use": "@vercel/static" },
++   { "src": "landing/**",                "use": "@vercel/static" },
     { "src": "app/package.json",         "use": "@vercel/next"  }
   ],
   "routes": [
-    { "src": "/",                        "dest": "/landing/index.html" },
-    { "src": "/app(?:/(.*))?",           "dest": "/app/$1"               },
-    { "src": "/(.*\\.(png|jpg|svg|css))","dest": "/landing/$1"            }
+    // First serve any static asset from landing/
+    { 
+      "src": "/(.*\\.(png|jpg|svg|css|js))", 
+      "dest": "/landing/$1" 
+    },
+    // Then your Next.js app
+    { 
+      "src": "/app(?:/(.*))?", 
+      "dest": "/app/$1" 
+    },
+    // Finally, the landing page at root
+    { 
+      "src": "/",                        
+      "dest": "/landing/index.html" 
+    }
   ]
 }
- 
