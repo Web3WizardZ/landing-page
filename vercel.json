@@ -6,17 +6,17 @@
     { "src": "app/package.json",         "use": "@vercel/next"  }
   ],
   "routes": [
-    // First serve any static asset from landing/
+    
     { 
       "src": "/(.*\\.(png|jpg|svg|css|js))", 
       "dest": "/landing/$1" 
     },
-    // Then your Next.js app
+   
     { 
       "src": "/app(?:/(.*))?", 
       "dest": "/app/$1" 
     },
-    // Finally, the landing page at root
+    
     { 
       "src": "/",                        
       "dest": "/landing/index.html" 
