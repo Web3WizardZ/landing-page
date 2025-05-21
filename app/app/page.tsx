@@ -1,103 +1,220 @@
-import Image from "next/image";
+// app/app/page.tsx
+'use client'
 
-export default function Home() {
+import React, { useState, useEffect, useRef } from 'react'
+import { motion, useMotionValue } from 'framer-motion'
+import {
+  FiHome, FiClock, FiSettings, FiBell,
+  FiPlus, FiArrowDownCircle, FiArrowUpCircle,
+  FiSend, FiDownload, FiStar, FiCamera, FiSearch
+} from 'react-icons/fi'
+
+// Relative imports from your components folder
+import MorphingBlobs from '../components/MorphingBlobs'
+import Sparkline      from '../components/Sparkline'
+import ScannerModal   from '../components/ScannerModal'
+import ChatAssist     from '../components/ChatAssist'
+
+// Stub out these until you build them
+function ParticleBurst({ active }: { active: boolean }) { return null }
+function OnboardingSpotlight({ steps, onFinish }: any) { return null }
+
+export default function EnhancedMoneyTransferPage() {
+  // ─── State & Refs ────────────────────────────────────────────
+  const style = { x: useMotionValue(0), y: useMotionValue(0) }
+  const [loading, setLoading]       = useState(true)
+  const [time, setTime]             = useState(new Date())
+  const [showOnboard, setShowOnboard] = useState(true)
+  const [burst, setBurst]           = useState(false)
+  const [scannerOpen, setScannerOpen] = useState(false)
+  const [points, setPoints]         = useState(0)
+  const [language, setLanguage]     = useState<'en'|'zu'>('en')
+
+  const headerRef  = useRef<HTMLDivElement>(null)
+  const balanceRef = useRef<HTMLDivElement>(null)
+  const quickRef   = useRef<HTMLDivElement>(null)
+  const actionsRef = useRef<HTMLDivElement>(null)
+
+  // ─── Effects ────────────────────────────────────────────────
+  useEffect(() => {
+    const t = setTimeout(() => { setLoading(false); setBurst(true) }, 800)
+    const c = setInterval(() => setTime(new Date()), 60_000)
+    return () => { clearTimeout(t); clearInterval(c) }
+  }, [])
+
+  // ─── Derived / Handlers ─────────────────────────────────────
+  const hour = time.getHours()
+  const greet = {
+    en: hour < 12 ? 'Good Morning' : hour < 18 ? 'Good Afternoon' : 'Good Evening',
+    zu: 'Sawubona'
+  }[language]
+  const locale = language === 'en' ? 'en-US' : 'zu-ZA'
+  const formattedTime = time.toLocaleTimeString(locale, { hour:'2-digit', minute:'2-digit' })
+
+  const sparkData   = [0.9,1.1,1.05,1.2,1.15,1.3,1.25]
+  const contacts    = ['Andre','Bill','Chris','Daniel']
+  const transactions = [
+    { to:'Alice',  amount:'-$25.00',  date:'May 12' },
+    { to:'Market', amount:'-$100.00', date:'May 11' },
+    { to:'Salary', amount:'+$500.00', date:'May 10' }
+  ]
+  const rates       = { EUR:0.90, GBP:0.78, ZAR:18.2 }
+  const [currency, setCurrency] = useState<keyof typeof rates>('EUR')
+  const convertedValue = (1234.56 * rates[currency]).toFixed(2)
+
+  const actionsList = [
+    { label:'Deposit',  icon:FiArrowDownCircle, gradient:'from-indigo-500 to-indigo-400', onClick:() => {} },
+    { label:'Withdraw', icon:FiArrowUpCircle,   gradient:'from-pink-500 to-pink-300',     onClick:() => {} },
+    { label:'Send',     icon:FiSend,            gradient:'from-green-500 to-green-300',   onClick:() => setPoints(p => p + 10) },
+    { label:'Receive',  icon:FiDownload,        gradient:'from-yellow-500 to-yellow-300',onClick:() => {} },
+    { label:'Scan',     icon:FiCamera,          gradient:'from-blue-500 to-blue-300',    onClick:() => setScannerOpen(true) }
+  ]
+
+  function handleAICommand(cmd: {amount:string, to:string}) {
+    setPoints(p => p + 5)
+  }
+
+  // ─── Render ─────────────────────────────────────────────────
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <motion.div className="relative min-h-screen bg-gradient-to-br from-indigo-50 via-white to-pink-50 p-6 overflow-hidden">
+      <MorphingBlobs style={style} />
+      <ParticleBurst active={burst} />
+      <ScannerModal open={scannerOpen} onClose={() => setScannerOpen(false)} />
+      <ChatAssist onCommand={handleAICommand} />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Header */}
+      <div ref={headerRef} className="sticky top-0 bg-white bg-opacity-70 backdrop-blur-md p-4 rounded-b-2xl shadow-md max-w-xl mx-auto mb-6 flex justify-between items-center">
+        <div className="flex items-center space-x-4">
+          <img src="https://i.pravatar.cc/150?u=User" alt="User" className="w-12 h-12 rounded-full ring-2 ring-indigo-400" />
+          <div>
+            <h1 className="text-xl font-bold">{greet}, Noble</h1>
+            <p className="text-sm text-gray-600">
+              <span className="inline-block mr-1 align-middle">
+                <FiClock size={16} />
+              </span>
+              {formattedTime}
+            </p>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+        <div className="flex items-center space-x-3">
+          <span className="inline-block text-gray-600">
+            <FiBell size={24} />
+          </span>
+          <span className="inline-block text-gray-600">
+            <FiSettings size={24} />
+          </span>
+          <select value={language} onChange={e => setLanguage(e.target.value as any)} className="border p-1 rounded text-sm">
+            <option value="en">EN</option>
+            <option value="zu">ZU</option>
+          </select>
+          <div className="flex items-center space-x-1 bg-yellow-100 px-2 py-1 rounded-full">
+  <span className="inline-block text-yellow-500">
+    <FiStar size={16} />
+  </span>
+  <span className="text-sm font-medium">{points}</span>
+</div>
+
+        </div>
+      </div>
+
+      {/* Balance Card */}
+      <div ref={balanceRef} className="relative bg-white p-5 rounded-2xl shadow-md max-w-xl mx-auto mb-6">
+        <p className="text-sm text-gray-500">Wallet Balance</p>
+        <div className="flex items-baseline space-x-2 mt-2">
+          {loading
+            ? <div className="h-10 w-40 bg-gray-300 rounded animate-pulse"/>
+            : <span className="text-3xl font-bold text-gray-900">{new Intl.NumberFormat(locale,{style:'currency',currency:'USD'}).format(1234.56)}</span>
+          }
+          <span className="text-sm text-green-500 font-medium">+4.5%</span>
+        </div>
+        <Sparkline data={sparkData} />
+        <div className="mt-4 flex items-center space-x-2">
+          <label htmlFor="currency" className="text-xs text-gray-600">Convert to</label>
+          <select id="currency" value={currency} onChange={e => setCurrency(e.target.value as any)} className="text-xs p-1 border rounded">
+            {Object.keys(rates).map(cur => <option key={cur} value={cur}>{cur}</option>)}
+          </select>
+          {!loading && <span className="text-xs text-gray-800">{currency} {convertedValue}</span>}
+        </div>
+      </div>
+
+      {/* Quick Send */}
+      <div ref={quickRef} className="bg-white p-5 rounded-2xl shadow-md max-w-xl mx-auto mb-6">
+        <h2 className="text-sm font-medium mb-4">Quick Send</h2>
+        <div className="flex space-x-4 overflow-x-auto">
+          {contacts.map(name => (
+            <motion.div key={name} className="text-center" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} transition={{ type: 'spring', stiffness: 300, damping: 20 }}>
+              <img src={`https://i.pravatar.cc/150?u=${name}`} alt={name} className="w-12 h-12 rounded-full mx-auto shadow"/>
+              <p className="mt-1 text-xs text-gray-700">{name}</p>
+            </motion.div>
+          ))}
+          <motion.button className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center shadow" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} transition={{ type: 'spring', stiffness: 300, damping: 20 }}>
+            <FiPlus size={20} />
+          </motion.button>
+        </div>
+      </div>
+
+      {/* Actions */}
+      <div ref={actionsRef} className="grid grid-cols-2 gap-4 max-w-xl mx-auto mb-6">
+        {actionsList.map(({ label, icon: Icon, gradient, onClick }) => (
+          <motion.button key={label} onClick={onClick} whileHover={{ scale: 1.05 }} className={`p-4 bg-gradient-to-br ${gradient} rounded-2xl shadow-md text-white flex flex-col items-center`}>
+            <div className="bg-white rounded-full p-2 mb-2">
+              <span className="inline-block text-indigo-600">
+                <Icon size={20} />
+              </span>
+            </div>
+            <span className="text-sm font-medium">{label}</span>
+          </motion.button>
+        ))}
+      </div>
+
+      {/* Transactions */}
+      <div className="bg-white p-5 rounded-2xl shadow-md max-w-xl mx-auto mb-6">
+        <div className="flex items-center mb-3">
+          <span className="text-gray-500 mr-2 inline-block">
+            <FiSearch size={20} />
+          </span>
+          <input type="text" placeholder="Search transactions" className="w-full text-sm bg-transparent focus:outline-none text-gray-800 placeholder-gray-500"/>
+        </div>
+        <div className="space-y-2">
+          {transactions.map((tx,i) => (
+            <div key={i} className="flex justify-between items-center py-2 border-b last:border-none">
+              <div className="flex items-center space-x-3">
+                <span className="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 font-semibold">{tx.to.charAt(0)}</span>
+                <div>
+                  <p className="font-medium text-gray-800">{tx.to}</p>
+                  <p className="text-xs text-gray-500">{tx.date}</p>
+                </div>
+              </div>
+              <p className={`font-semibold ${tx.amount.startsWith('+') ? 'text-green-500' : 'text-red-500'}`}>{tx.amount}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Bottom Navigation */}
+      <nav className="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 flex justify-around py-3 z-20">
+        {[FiHome,FiClock,FiSettings].map((Icon,i) => (
+          <button key={i} className="flex flex-col items-center text-gray-600 hover:text-indigo-500">
+            <span className="inline-block">
+              <Icon size={20} />
+            </span>
+            <span className="text-xs mt-1">{['Home','Activity','Settings'][i]}</span>
+          </button>
+        ))}
+      </nav>
+
+      {/* Onboarding */}
+      {showOnboard && (
+        <OnboardingSpotlight
+          steps={[
+            { ref: headerRef,  title: `${greet}, Noble`,    description: 'Profile & settings.' },
+            { ref: balanceRef, title: 'Balance',           description: 'Your wallet balance.' },
+            { ref: quickRef,   title: 'Quick Send',        description: 'Send money quickly.' },
+            { ref: actionsRef, title: 'Actions',           description: 'Key actions including scan.' },
+          ]}
+          onFinish={() => setShowOnboard(false)}
+        />
+      )}
+    </motion.div>
+  )
 }
