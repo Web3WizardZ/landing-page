@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "RemittEase",
   description: "AI-powered remittance and payments",
   icons: {
-    icon: '/favicon.png', 
+    icon: 'favicon.png', 
   },
 };
 
