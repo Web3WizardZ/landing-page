@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#4f46e5">
+  <title>REMT Token – RemittEase</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <a href="index.html" class="logo">
+      <img src="RE icon.png" alt="RemittEase" style="width: 32px; height: 32px; border-radius: 50%;">
+      RemittEase
+    </a>
+    <nav class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="security.html" class="nav-link">Security</a>
+      <a href="token.html" class="nav-link">Token</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode">
+        <i class="fas fa-moon"></i>
+      </button>
+      <a href="https://app.remittease.xyz" class="cta-button">Try Now</a>
+    </div>
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+      <i class="fas fa-bars"></i>
+    </button>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="security.html" class="nav-link">Security</a>
+    <a href="token.html" class="nav-link">Token</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </div>
+  <div class="backdrop" id="backdrop"></div>
+
+  <!-- Main -->
+  <main id="main" style="margin-top: 80px;">
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: 70vh;">
+      <div class="blob-container">
+        <svg class="blob-svg" viewBox="0 0 500 500" aria-hidden="true">
+          <defs>
+            <linearGradient id="blobGradient" gradientTransform="rotate(45)">
+              <stop offset="0%" stop-color="rgba(79, 70, 229, 0.4)"/>
+              <stop offset="100%" stop-color="rgba(236, 72, 153, 0.4)"/>
+            </linearGradient>
+          </defs>
+          <path fill="url(#blobGradient)" d="M421.5,304Q389,358,334.5,393.5Q280,429,225,397.5Q170,366,121,321Q72,276,88.5,210Q105,144,162,108Q219,72,278,84.5Q337,97,377.5,142Q418,187,421.5,304Z"/>
+        </svg>
+      </div>
+
+      <div class="container" style="display: flex; align-items: center; justify-content: center; text-align: center;">
+        <div style="max-width: 700px; position: relative; z-index: 10;">
+          <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 1.5rem;">
+            <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--secondary)); display: flex; align-items: center; justify-content: center; color: white; font-weight: 800; font-size: 1.5rem;">
+              R
+            </div>
+            <h1 style="font-size: 3.5rem; font-weight: 800; background: linear-gradient(to right, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 0;">
+              REMT Token
+            </h1>
+          </div>
+          <p style="font-size: 1.25rem; color: var(--text-muted); margin-bottom: 2rem;">
+            The utility token powering voice-activated remittances with rewards, governance, and fee discounts.
+          </p>
+          <div class="feature-badges" style="justify-content: center; margin-bottom: 2rem;">
+            <div class="badge ai-badge"><i class="fas fa-coins"></i> Earn Rewards</div>
+            <div class="badge"><i class="fas fa-percentage"></i> Fee Discounts</div>
+            <div class="badge"><i class="fas fa-vote-yea"></i> Governance</div>
+          </div>
+          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="#tokenomics" class="primary-btn">
+              <i class="fas fa-chart-pie"></i> View Tokenomics
+            </a>
+            <a href="#earn" class="secondary-btn">
+              <i class="fas fa-gift"></i> How to Earn
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Token Overview -->
+    <section class="section">
+      <div class="container">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+          <h2 class="section-title">REMT Token Utility</h2>
+          <p style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 3rem;">
+            REMT is the native utility token that powers the RemittEase ecosystem, providing value to users through reduced fees, governance participation, and exclusive rewards.
+          </p>
+        </div>
+        
+        <div class="features-grid">
+          <div class="feature-card ai-highlight">
+            <div class="feature-icon">
+              <i class="fas fa-percentage"></i>
+            </div>
+            <h3 class="feature-title">Fee Discounts</h3>
+            <p class="feature-description">Hold REMT to reduce transfer fees by up to 50%. Higher tiers unlock better discounts and premium features.</p>
+          </div>
+          <div class="feature-card ai-highlight">
+            <div class="feature-icon">
+              <i class="fas fa-gift"></i>
+            </div>
+            <h3 class="feature-title">Transfer Rewards</h3>
+            <p class="feature-description">Earn REMT tokens with every voice-activated transfer. Larger transfers and frequent usage earn bonus multipliers.</p>
+          </div>
+          <div class="feature-card ai-highlight">
+            <div class="feature-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3 class="feature-title">Staking Yields</h3>
+            <p class="feature-description">Stake REMT tokens to earn APY from protocol revenue sharing and validator rewards across multiple blockchains.</p>
+          </div>
+          <div class="feature-card ai-highlight">
+            <div class="feature-icon">
+              <i class="fas fa-vote-yea"></i>
+            </div>
+            <h3 class="feature-title">Governance Rights</h3>
+            <p class="feature-description">Vote on protocol upgrades, new currency pairs, AI model improvements, and treasury allocation decisions.</p>
+          </div>
+          <div class="feature-card ai-highlight">
+            <div class="feature-icon">
+              <i class="fas fa-crown"></i>
+            </div>
+            <h3 class="feature-title">Premium Features</h3>
+            <p class="feature-description">Access advanced AI insights, priority customer support, higher transfer limits, and early feature previews.</p>
+          </div>
+          <div class="feature-card ai-highlight">
+            <div class="feature-icon">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <h3 class="feature-title">Partner Benefits</h3>
+            <p class="feature-description">Exclusive rates with partner exchanges, priority access to new stablecoins, and special merchant offers.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tokenomics -->
+    <section id="tokenomics" class="section" style="background: linear-gradient(to right, rgba(79, 70, 229, 0.05), rgba(236, 72, 153, 0.05));">
+      <div class="container">
+        <h2 class="section-title">Tokenomics</h2>
+        <p class="section-subtitle">Total Supply: 1,000,000,000 REMT</p>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-bottom: 4rem;">
+          <div>
+            <h3 style="font-size: 2rem; font-weight: 700; margin-bottom: 2rem; color: var(--text-dark);">Token Distribution</h3>
+            <div style="space-y: 1.5rem;">
+              <div style="margin-bottom: 1.5rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                  <span style="font-weight: 600; color: var(--text-dark);">Community Rewards</span>
+                  <span style="font-weight: 700; color: var(--primary);">40%</span>
+                </div>
+                <div style="background: rgba(79, 70, 229, 0.1); height: 8px; border-radius: 4px; overflow: hidden;">
+                  <div style="background: var(--primary); height: 100%; width: 40%; border-radius: 4px;"></div>
+                </div>
+              </div>
+              <div style="margin-bottom: 1.5rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                  <span style="font-weight: 600; color: var(--text-dark);">Ecosystem Development</span>
+                  <span style="font-weight: 700; color: var(--primary);">25%</span>
+                </div>
+                <div style="background: rgba(79, 70, 229, 0.1); height: 8px; border-radius: 4px; overflow: hidden;">
+                  <div style="background: var(--primary); height: 100%; width: 25%; border-radius: 4px;"></div>
+                </div>
+              </div>
+              <div style="margin-bottom: 1.5rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                  <span style="font-weight: 600; color: var(--text-dark);">Team & Advisors</span>
+                  <span style="font-weight: 700; color: var(--primary);">15%</span>
+                </div>
+                <div style="background: rgba(79, 70, 229, 0.1); height: 8px; border-radius: 4px; overflow: hidden;">
+                  <div style="background: var(--primary); height: 100%; width: 15%; border-radius: 4px;"></div>
+                </div>
+              </div>
+              <div style="margin-bottom: 1.5rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                  <span style="font-weight: 600; color: var(--text-dark);">Treasury Reserve</span>
+                  <span style="font-weight: 700; color: var(--primary);">10%</span>
+                </div>
+                <div style="background: rgba(79, 70, 229, 0.1); height: 8px; border-radius: 4px; overflow: hidden;">
+                  <div style="background: var(--primary); height: 100%; width: 10%; border-radius: 4px;"></div>
+                </div>
+              </div>
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                  <span style="font-weight: 600; color: var(--text-dark);">Liquidity & Partnerships</span>
+                  <span style="font-weight: 700; color: var(--primary);">10%</span>
+                </div>
+                <div style="background: rgba(79, 70, 229, 0.1); height: 8px; border-radius: 4px; overflow: hidden;">
+                  <div style="background: var(--primary); height: 100%; width: 10%; border-radius: 4px;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-md); border: 1px solid rgba(129, 140, 248, 0.1);">
+            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--text-dark); text-align: center;">Token Release Schedule</h3>
+            <div style="space-y: 1rem;">
+              <div style="margin-bottom: 1rem;">
+                <h4 style="font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem;">Community Rewards</h4>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Released over 4 years based on platform usage and milestones</p>
+              </div>
+              <div style="margin-bottom: 1rem;">
+                <h4 style="font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem;">Team Tokens</h4>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">1-year cliff, then 3-year linear vesting</p>
+              </div>
+              <div style="margin-bottom: 1rem;">
+                <h4 style="font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem;">Ecosystem Fund</h4>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Governed releases for partnerships and integrations</p>
+              </div>
+              <div>
+                <h4 style="font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem;">Treasury</h4>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Emergency fund with community governance required</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Token Economics -->
+        <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 3rem; box-shadow: var(--shadow-lg); border: 1px solid rgba(129, 140, 248, 0.1);">
+          <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 2rem; color: var(--text-dark); text-align: center;">Token Economics</h3>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+            <div style="text-align: center;">
+              <i class="fas fa-burn" style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;"></i>
+              <h4 style="font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem;">Token Burn</h4>
+              <p style="color: var(--text-muted); font-size: 0.9rem;">10% of protocol revenue used for quarterly token burns</p>
+            </div>
+            <div style="text-align: center;">
+              <i class="fas fa-chart-line" style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;"></i>
+              <h4 style="font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem;">Revenue Share</h4>
+              <p style="color: var(--text-muted); font-size: 0.9rem;">Stakers earn yield from 50% of platform transaction fees</p>
+            </div>
+            <div style="text-align: center;">
+              <i class="fas fa-arrows-rotate" style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;"></i>
+              <h4 style="font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem;">Utility Growth</h4>
+              <p style="color: var(--text-muted); font-size: 0.9rem;">More features and use cases added with platform growth</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How to Earn -->
+    <section id="earn" class="section">
+      <div class="container">
+        <h2 class="section-title">How to Earn REMT</h2>
+        <p class="section-subtitle">Multiple ways to earn tokens through platform participation</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 4rem;">
+          <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-md); border: 1px solid rgba(129, 140, 248, 0.1); text-align: center;">
+            <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--secondary)); margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center;">
+              <i class="fas fa-microphone" style="font-size: 1.5rem; color: white;"></i>
+            </div>
+            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-dark);">Voice Transfers</h3>
+            <p style="color: var(--text-muted); line-height: 1.6; margin-bottom: 1.5rem;">Earn 0.1% of transfer amount in REMT for every voice-activated transaction</p>
+            <div style="background: rgba(79, 70, 229, 0.1); padding: 1rem; border-radius: var(--radius-md);">
+              <p style="font-size: 0.8rem; color: var(--primary); font-weight: 600;">Example: $1000 transfer = 1 REMT earned</p>
+            </div>
+          </div>
+          
+          <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-md); border: 1px solid rgba(129, 140, 248, 0.1); text-align: center;">
+            <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, var(--secondary), var(--tertiary)); margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center;">
+              <i class="fas fa-users" style="font-size: 1.5rem; color: white;"></i>
+            </div>
+            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-dark);">Referral Program</h3>
+            <p style="color: var(--text-muted); line-height: 1.6; margin-bottom: 1.5rem;">Invite friends and earn 20% of their transfer rewards for 12 months</p>
+            <div style="background: rgba(236, 72, 153, 0.1); padding: 1rem; border-radius: var(--radius-md);">
+              <p style="font-size: 0.8rem; color: var(--secondary); font-weight: 600;">Unlimited referrals, lifetime earnings</p>
+            </div>
+          </div>
+          
+          <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-md); border: 1px solid rgba(129, 140, 248, 0.1); text-align: center;">
+            <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, var(--tertiary), var(--primary)); margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center;">
+              <i class="fas fa-chart-line" style="font-size: 1.5rem; color: white;"></i>
+            </div>
+            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-dark);">Staking Rewards</h3>
+            <p style="color: var(--text-muted); line-height: 1.6; margin-bottom: 1.5rem;">Stake REMT tokens to earn 8-15% APY from protocol revenue</p>
+            <div style="background: rgba(16, 185, 129, 0.1); padding: 1rem; border-radius: var(--radius-md);">
+              <p style="font-size: 0.8rem; color: var(--tertiary); font-weight: 600;">Higher APY for longer lock periods</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bonus Multipliers -->
+        <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 3rem; box-shadow: var(--shadow-lg); border: 1px solid rgba(129, 140, 248, 0.1);">
+          <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 2rem; color: var(--text-dark); text-align: center;">Earning Multipliers</h3>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+            <div style="text-align: center;">
+              <div style="font-size: 2rem; font-weight: 800; color: var(--primary); margin-bottom: 0.5rem;">2x</div>
+              <h4 style="font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem;">Daily User</h4>
+              <p style="color: var(--text-muted); font-size: 0.9rem;">Transfer every day for 7+ days</p>
+            </div>
+            <div style="text-align: center;">
+              <div style="font-size: 2rem; font-weight: 800; color: var(--primary); margin-bottom: 0.5rem;">3x</div>
+              <h4 style="font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem;">Volume Bonus</h4>
+              <p style="color: var(--text-muted); font-size: 0.9rem;">Monthly volume over $5,000</p>
+            </div>
+            <div style="text-align: center;">
+              <div style="font-size: 2rem; font-weight: 800; color: var(--primary); margin-bottom: 0.5rem;">5x</div>
+              <h4 style="font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem;">REMT Holder</h4>
+              <p style="color: var(--text-muted); font-size: 0.9rem;">Hold 1000+ REMT tokens</p>
+            </div>
+            <div style="text-align: center;">
+              <div style="font-size: 2rem; font-weight: 800; color: var(--primary); margin-bottom: 0.5rem;">10x</div>
+              <h4 style="font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem;">Ambassador</h4>
+              <p style="color: var(--text-muted); font-size: 0.9rem;">Community leaders & influencers</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Staking Tiers -->
+    <section class="section" style="background: linear-gradient(to right, rgba(79, 70, 229, 0.05), rgba(236, 72, 153, 0.05));">
+      <div class="container">
+        <h2 class="section-title">Staking Tiers & Benefits</h2>
+        <p class="section-subtitle">Higher tiers unlock better rewards and exclusive features</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+          <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-md); border: 1px solid rgba(129, 140, 248, 0.1); position: relative;">
+            <div style="position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: rgba(79, 70, 229, 0.1); color: var(--primary); padding: 0.5rem 1rem; border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 600;">
+              Bronze
+            </div>
+            <div style="text-align: center; margin-top: 1rem;">
+              <div style="font-size: 2rem; font-weight: 800; color: var(--text-dark); margin-bottom: 0.5rem;">100 REMT</div>
+              <p style="color: var(--text-muted); margin-bottom: 2rem;">Minimum stake</p>
+              <ul style="list-style: none; space-y: 0.75rem; text-align: left;">
+                <li style="margin-bottom: 0.75rem; display: flex; align-items: center;">
+                  <i class="fas fa-check" style="color: var(--tertiary); margin-right: 0.75rem; width: 16px;"></i>
+                  <span style="color: var(--text-muted); font-size: 0.9rem;">5% fee discount</span>
+                </li>
+                <li style="margin-bottom: 0.75rem; display: flex; align-items: center;">
+                  <i class="fas fa-check" style="color: var(--tertiary); margin-right: 0.75rem; width: 16px;"></i>
+                  <span style="color: var(--text-muted); font-size: 0.9rem;">8% staking APY</span>
+                </li>
+                <li style="display: flex; align-items: center;">
+                  <i class="fas fa-check" style="color: var(--tertiary); margin-right: 0.75rem; width: 16px;"></i>
+                  <span style="color: var(--text-muted); font-size: 0.9rem;">Basic governance</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-md); border: 2px solid var(--primary); position: relative;">
+            <div style="position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: var(--primary); color: white; padding: 0.5rem 1rem; border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 600;">
+              Silver
+            </div>
+            <div style="text-align: center; margin-top: 1rem;">
+              <div style="font-size: 2rem; font-weight: 800; color: var(--text-dark); margin-bottom: 0.5rem;">1,000 REMT</div>
+              <p style="color: var(--text-muted); margin-bottom: 2rem;">Recommended</p>
+              <ul style="list-style: none; space-y: 0.75rem; text-align: left;">
+                <li style="margin-bottom: 0.75rem; display: flex; align-items: center;">
+                  <i class="fas fa-check" style="color: var(--tertiary); margin-right: 0.75rem; width: 16px;"></i>
+                  <span style="color: var(--text-muted); font-size: 0.9rem;">20% fee discount</span>
+                </li>
+                <li style="margin-bottom: 0.75rem; display: flex; align-items: center;">
+                  <i class="fas fa-check" style="color: var(--tertiary); margin-right: 0.75rem; width: 16px;"></i>
+                  <span style="color: var(--text-muted); font-size: 0.9rem;">12% staking APY</span>
+                </li>
+                <li style="margin-bottom: 0.75rem; display: flex; align-items: center;">
+                  <i class="fas fa-check" style="color: var(--tertiary); margin-right: 0.75rem; width: 16px;"></i>
+                  <span style="color: var(--text-muted); font-size: 0.9rem;">Priority support</span>
+                </li>
+                <li style="display: flex; align-items: center;">
+                  <i class="fas fa-check" style="color: var(--tertiary); margin-right: 0.75rem; width: 16px;"></i>
+                  <span style="color: var(--text-muted); font-size: 0.9rem;">Advanced analytics</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-md); border: 1px solid rgba(255, 215, 0, 0.5); position: relative;">
+            <div style="position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #FFD700, #FFA500); color: white; padding: 0.5rem 1rem; border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 600;">
+              Gold
+            </div>
+            <div style="text-align: center; margin-top: 1rem;">
+              <div style="font-size: 2rem; font-weight: 800; color: var(--text-dark); margin-bottom: 0.5rem;">10,000 REMT</div>
+              <p style="color: var(--text-muted); margin-bottom: 2rem;">Premium tier</p>
+              <ul style="list-style: none; space-y: 0.75rem; text-align: left;">
+                <li style="margin-bottom: 0.75rem; display: flex; align-items: center;">
+                  <i class="fas fa-check" style="color: var(--tertiary); margin-right: 0.75rem; width: 16px;"></i>
+                  <span style="color: var(--text-muted); font-size: 0.9rem;">50% fee discount</span>
+                </li>
+                <li style="margin-bottom: 0.75rem; display: flex; align-items: center;">
+                  <i class="fas fa-check" style="color: var(--tertiary); margin-right: 0.75rem; width: 16px;"></i>
+                  <span style="color: var(--text-muted); font-size: 0.9rem;">15% staking APY</span>
+                </li>
+                <li style="margin-bottom: 0.75rem; display: flex; align-items: center;">
+                  <i class="fas fa-check" style="color: var(--tertiary); margin-right: 0.75rem; width: 16px;"></i>
+                  <span style="color: var(--text-muted); font-size: 0.9rem;">VIP support</span>
+                </li>
+                <li style="margin-bottom: 0.75rem; display: flex; align-items: center;">
+                  <i class="fas fa-check" style="color: var(--tertiary); margin-right: 0.75rem; width: 16px;"></i>
+                  <span style="color: var(--text-muted); font-size: 0.9rem;">Beta features</span>
+                </li>
+                <li style="display: flex; align-items: center;">
+                  <i class="fas fa-check" style="color: var(--tertiary); margin-right: 0.75rem; width: 16px;"></i>
+                  <span style="color: var(--text-muted); font-size: 0.9rem;">Governance influence</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Governance -->
+    <section class="section">
+      <div class="container">
+        <div style="max-width: 800px; margin: 0 auto;">
+          <h2 class="section-title">Decentralized Governance</h2>
+          <p class="section-subtitle">Shape the future of voice-activated remittances</p>
+          
+          <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 3rem; box-shadow: var(--shadow-lg); border: 1px solid rgba(129, 140, 248, 0.1); margin-bottom: 3rem;">
+            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 2rem; color: var(--text-dark); text-align: center;">What You Can Vote On</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+              <div>
+                <ul style="list-style: none; space-y: 1rem;">
+                  <li style="margin-bottom: 1rem; display: flex; align-items: center;">
+                    <i class="fas fa-microphone" style="color: var(--primary); margin-right: 1rem; width: 20px;"></i>
+                    <span style="color: var(--text-muted);">AI voice model improvements</span>
+                  </li>
+                  <li style="margin-bottom: 1rem; display: flex; align-items: center;">
+                    <i class="fas fa-coins" style="color: var(--primary); margin-right: 1rem; width: 20px;"></i>
+                    <span style="color: var(--text-muted);">New stablecoin additions</span>
+                  </li>
+                  <li style="margin-bottom: 1rem; display: flex; align-items: center;">
+                    <i class="fas fa-percentage" style="color: var(--primary); margin-right: 1rem; width: 20px;"></i>
+                    <span style="color: var(--text-muted);">Fee structure changes</span>
+                  </li>
+                  <li style="display: flex; align-items: center;">
+                    <i class="fas fa-globe" style="color: var(--primary); margin-right: 1rem; width: 20px;"></i>
+                    <span style="color: var(--text-muted);">New country expansions</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <ul style="list-style: none; space-y: 1rem;">
+                  <li style="margin-bottom: 1rem; display: flex; align-items: center;">
+                    <i class="fas fa-handshake" style="color: var(--primary); margin-right: 1rem; width: 20px;"></i>
+                    <span style="color: var(--text-muted);">Partnership proposals</span>
+                  </li>
+                  <li style="margin-bottom: 1rem; display: flex; align-items: center;">
+                    <i class="fas fa-treasure-chest" style="color: var(--primary); margin-right: 1rem; width: 20px;"></i>
+                    <span style="color: var(--text-muted);">Treasury allocation</span>
+                  </li>
+                  <li style="margin-bottom: 1rem; display: flex; align-items: center;">
+                    <i class="fas fa-code" style="color: var(--primary); margin-right: 1rem; width: 20px;"></i>
+                    <span style="color: var(--text-muted);">Protocol upgrades</span>
+                  </li>
+                  <li style="display: flex; align-items: center;">
+                    <i class="fas fa-users" style="color: var(--primary); margin-right: 1rem; width: 20px;"></i>
+                    <span style="color: var(--text-muted);">Community initiatives</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div style="text-align: center;">
+            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--text-dark);">Voting Power</h3>
+            <p style="color: var(--text-muted); margin-bottom: 2rem; line-height: 1.6;">
+              Your voting power is proportional to your staked REMT tokens. Longer staking periods increase your governance influence, ensuring committed community members have a stronger voice.
+            </p>
+            <a href="https://app.remittease.xyz/governance" class="primary-btn">
+              <i class="fas fa-vote-yea"></i> View Active Proposals
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Get Started -->
+    <section class="section" style="background: linear-gradient(to right, rgba(79, 70, 229, 0.05), rgba(236, 72, 153, 0.05));">
+      <div class="container">
+        <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+          <h2 class="section-title">Start Earning REMT</h2>
+          <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.7;">
+            Join thousands of users earning REMT tokens through voice-activated transfers. The more you use RemittEase, the more you earn.
+          </p>
+          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="https://app.remittease.xyz" class="primary-btn">
+              <i class="fas fa-microphone"></i> Start Transferring
+            </a>
+            <a href="https://app.remittease.xyz/stake" class="secondary-btn">
+              <i class="fas fa-chart-line"></i> Stake REMT
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-column">
+        <div class="footer-logo">RemittEase</div>
+        <p class="footer-description">Making global remittances fast, affordable, and accessible with AI and blockchain technology.</p>
+        <div class="social-links">
+          <a href="https://x.com/remitt_ease" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="https://discord.gg/ewmuwbZFgS" class="social-link"><i class="fab fa-discord"></i></a>
+          <a href="https://medium.com/@RemittEase" class="social-link"><i class="fab fa-medium"></i></a>
+          <a href="https://open.spotify.com/show/5Gx98emQG99UwMSsF9hoR4" class="social-link"><i class="fab fa-spotify"></i></a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h4>Company</h4>
+        <div class="footer-links">
+          <a href="about.html" class="footer-link">About Us</a>
+          <a href="#" class="footer-link">Careers</a>
+          <a href="#" class="footer-link">Blog</a>
+          <a href="#" class="footer-link">Press</a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h4>Product</h4>
+        <div class="footer-links">
+          <a href="#" class="footer-link">Features</a>
+          <a href="security.html" class="footer-link">Security</a>
+          <a href="token.html" class="footer-link">Token</a>
+          <a href="#" class="footer-link">Roadmap</a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h4>Support</h4>
+        <div class="footer-links">
+          <a href="#" class="footer-link">Help Center</a>
+          <a href="contact.html" class="footer-link">Contact Us</a>
+          <a href="#" class="footer-link">Status</a>
+          <a href="#" class="footer-link">API Docs</a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; 2025 RemittEase. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script>
+    const themeToggle = document.getElementById('themeToggle');
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const backdrop = document.getElementById('backdrop');
+    const backToTop = document.getElementById('backToTop');
+
+    themeToggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark-mode');
+      themeToggle.innerHTML = document.documentElement.classList.contains('dark-mode') 
+        ? '<i class="fas fa-sun"></i>' 
+        : '<i class="fas fa-moon"></i>';
+    });
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+      backdrop.classList.toggle('active');
+      mobileMenuBtn.innerHTML = mobileMenu.classList.contains('active') 
+        ? '<i class="fas fa-times"></i>' 
+        : '<i class="fas fa-bars"></i>';
+    });
+
+    backdrop.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+      backdrop.classList.remove('active');
+      mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+    });
+
+    document.querySelectorAll('.mobile-menu .nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        backdrop.classList.remove('active');
+        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+      });
+    });
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) {
+        backToTop.classList.add('active');
+      } else {
+        backToTop.classList.remove('active');
+      }
+    });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+</body>
+</html>

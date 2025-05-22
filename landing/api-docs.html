@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#4f46e5">
+  <title>API Documentation – RemittEase</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .code-block {
+      background: #1e293b;
+      color: #e2e8f0;
+      padding: 1.5rem;
+      border-radius: var(--radius-md);
+      overflow-x: auto;
+      font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin: 1rem 0;
+    }
+    .code-block .keyword { color: #c792ea; }
+    .code-block .string { color: #c3e88d; }
+    .code-block .number { color: #f78c6c; }
+    .code-block .comment { color: #676e95; font-style: italic; }
+    .endpoint { 
+      background: var(--card-bg); 
+      border-radius: var(--radius-md); 
+      padding: 1.5rem; 
+      margin: 1rem 0; 
+      border-left: 4px solid var(--primary);
+      box-shadow: var(--shadow-sm);
+    }
+    .method { 
+      display: inline-block; 
+      padding: 0.25rem 0.75rem; 
+      border-radius: var(--radius-sm); 
+      font-weight: 600; 
+      font-size: 0.8rem; 
+      margin-right: 1rem;
+    }
+    .method.get { background: #10b981; color: white; }
+    .method.post { background: #3b82f6; color: white; }
+    .method.put { background: #f59e0b; color: white; }
+    .method.delete { background: #ef4444; color: white; }
+    .param { 
+      background: rgba(79, 70, 229, 0.1); 
+      padding: 0.25rem 0.5rem; 
+      border-radius: var(--radius-sm); 
+      font-family: monospace; 
+      font-size: 0.9rem;
+    }
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 80px;
+      width: 250px;
+      height: calc(100vh - 80px);
+      background: var(--card-bg);
+      border-right: 1px solid rgba(129, 140, 248, 0.1);
+      overflow-y: auto;
+      padding: 2rem 0;
+      z-index: 30;
+    }
+    .sidebar-link {
+      display: block;
+      padding: 0.75rem 1.5rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      border-left: 3px solid transparent;
+      transition: all var(--transition);
+    }
+    .sidebar-link:hover, .sidebar-link.active {
+      color: var(--primary);
+      border-left-color: var(--primary);
+      background: rgba(79, 70, 229, 0.05);
+    }
+    .content {
+      margin-left: 250px;
+      padding: 2rem;
+    }
+    @media (max-width: 992px) {
+      .sidebar { display: none; }
+      .content { margin-left: 0; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <a href="index.html" class="logo">
+      <img src="RE icon.png" alt="RemittEase" style="width: 32px; height: 32px; border-radius: 50%;">
+      RemittEase
+    </a>
+    <nav class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="security.html" class="nav-link">Security</a>
+      <a href="token.html" class="nav-link">Token</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode">
+        <i class="fas fa-moon"></i>
+      </button>
+      <a href="https://app.remittease.xyz" class="cta-button">Try Now</a>
+    </div>
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+      <i class="fas fa-bars"></i>
+    </button>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="security.html" class="nav-link">Security</a>
+    <a href="token.html" class="nav-link">Token</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </div>
+  <div class="backdrop" id="backdrop"></div>
+
+  <!-- Sidebar -->
+  <nav class="sidebar">
+    <a href="#overview" class="sidebar-link active">Overview</a>
+    <a href="#authentication" class="sidebar-link">Authentication</a>
+    <a href="#voice-api" class="sidebar-link">Voice API</a>
+    <a href="#transfers" class="sidebar-link">Transfers</a>
+    <a href="#stablecoins" class="sidebar-link">Stablecoins</a>
+    <a href="#webhooks" class="sidebar-link">Webhooks</a>
+    <a href="#errors" class="sidebar-link">Error Handling</a>
+    <a href="#sdks" class="sidebar-link">SDKs</a>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="content">
+    <!-- Overview -->
+    <section id="overview">
+      <h1 style="font-size: 3rem; font-weight: 800; margin-bottom: 1rem; background: linear-gradient(to right, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+        API Documentation
+      </h1>
+      <p style="font-size: 1.2rem; color: var(--text-muted); margin-bottom: 2rem;">
+        Build voice-activated remittance features into your application with our developer-friendly API.
+      </p>
+
+      <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-md); border: 1px solid rgba(129, 140, 248, 0.1); margin-bottom: 3rem;">
+        <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-dark);">Base URL</h3>
+        <div class="code-block">https://api.remittease.xyz/v1</div>
+        
+        <h3 style="font-size: 1.25rem; font-weight: 700; margin: 2rem 0 1rem; color: var(--text-dark);">Key Features</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <i class="fas fa-microphone" style="color: var(--primary);"></i>
+            <span style="color: var(--text-muted);">Voice command processing</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <i class="fas fa-coins" style="color: var(--primary);"></i>
+            <span style="color: var(--text-muted);">Stablecoin conversions</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <i class="fas fa-bolt" style="color: var(--primary);"></i>
+            <span style="color: var(--text-muted);">Real-time transfers</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <i class="fas fa-webhook" style="color: var(--primary);"></i>
+            <span style="color: var(--text-muted);">Webhook notifications</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Authentication -->
+    <section id="authentication">
+      <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--text-dark);">Authentication</h2>
+      
+      <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+        RemittEase API uses API keys for authentication. Include your API key in the Authorization header.
+      </p>
+
+      <div class="endpoint">
+        <h4 style="font-weight: 600; margin-bottom: 1rem; color: var(--text-dark);">Headers</h4>
+        <div class="code-block"><span class="keyword">Authorization:</span> <span class="string">Bearer your_api_key_here</span>
+<span class="keyword">Content-Type:</span> <span class="string">application/json</span></div>
+      </div>
+
+      <div style="background: rgba(16, 185, 129, 0.1); border-radius: var(--radius-md); padding: 1.5rem; margin: 1rem 0;">
+        <p style="color: var(--tertiary); font-weight: 600; margin-bottom: 0.5rem;">
+          <i class="fas fa-info-circle" style="margin-right: 0.5rem;"></i>Get API Keys
+        </p>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">
+          Generate API keys from your RemittEase dashboard. Use test keys for development and live keys for production.
+        </p>
+      </div>
+    </section>
+
+    <!-- Voice API -->
+    <section id="voice-api">
+      <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--text-dark);">Voice API</h2>
+      
+      <div class="endpoint">
+        <div style="margin-bottom: 1rem;">
+          <span class="method post">POST</span>
+          <code>/voice/process</code>
+        </div>
+        <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Process voice commands and convert to transfer intent.</p>
+        
+        <h4 style="font-weight: 600; margin-bottom: 1rem; color: var(--text-dark);">Request Body</h4>
+        <div class="code-block">{
+  <span class="string">"audio_data"</span>: <span class="string">"base64_encoded_audio"</span>,
+  <span class="string">"user_id"</span>: <span class="string">"user_12345"</span>,
+  <span class="string">"voice_profile"</span>: <span class="string">"profile_abc123"</span>
+}</div>
+
+        <h4 style="font-weight: 600; margin: 1.5rem 0 1rem; color: var(--text-dark);">Response</h4>
+        <div class="code-block">{
+  <span class="string">"status"</span>: <span class="string">"success"</span>,
+  <span class="string">"intent"</span>: {
+    <span class="string">"action"</span>: <span class="string">"transfer"</span>,
+    <span class="string">"amount"</span>: <span class="number">100</span>,
+    <span class="string">"currency"</span>: <span class="string">"USD"</span>,
+    <span class="string">"recipient"</span>: <span class="string">"mom"</span>,
+    <span class="string">"confidence"</span>: <span class="number">0.98</span>
+  },
+  <span class="string">"voice_verified"</span>: <span class="keyword">true</span>
+}</div>
+      </div>
+
+      <div class="endpoint">
+        <div style="margin-bottom: 1rem;">
+          <span class="method post">POST</span>
+          <code>/voice/train</code>
+        </div>
+        <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Train voice biometric model for user authentication.</p>
+        
+        <h4 style="font-weight: 600; margin-bottom: 1rem; color: var(--text-dark);">Parameters</h4>
+        <ul style="list-style: none; margin-bottom: 1.5rem;">
+          <li style="margin-bottom: 0.5rem;"><span class="param">audio_samples</span> - Array of base64 encoded voice samples</li>
+          <li style="margin-bottom: 0.5rem;"><span class="param">user_id</span> - Unique user identifier</li>
+          <li><span class="param">language</span> - User's preferred language (optional)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Transfers -->
+    <section id="transfers">
+      <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--text-dark);">Transfers</h2>
+      
+      <div class="endpoint">
+        <div style="margin-bottom: 1rem;">
+          <span class="method post">POST</span>
+          <code>/transfers</code>
+        </div>
+        <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Initiate a new transfer with automatic stablecoin conversion.</p>
+        
+        <h4 style="font-weight: 600; margin-bottom: 1rem; color: var(--text-dark);">Request Body</h4>
+        <div class="code-block">{
+  <span class="string">"amount"</span>: <span class="number">100.00</span>,
+  <span class="string">"from_currency"</span>: <span class="string">"USD"</span>,
+  <span class="string">"to_currency"</span>: <span class="string">"ZAR"</span>,
+  <span class="string">"recipient"</span>: {
+    <span class="string">"name"</span>: <span class="string">"John Doe"</span>,
+    <span class="string">"email"</span>: <span class="string">"john@example.com"</span>,
+    <span class="string">"phone"</span>: <span class="string">"+27123456789"</span>
+  },
+  <span class="string">"payment_method"</span>: <span class="string">"bank_account"</span>,
+  <span class="string">"reference"</span>: <span class="string">"Family support"</span>
+}</div>
+
+        <h4 style="font-weight: 600; margin: 1.5rem 0 1rem; color: var(--text-dark);">Response</h4>
+        <div class="code-block">{
+  <span class="string">"transfer_id"</span>: <span class="string">"tx_7f8g9h0i1j"</span>,
+  <span class="string">"status"</span>: <span class="string">"processing"</span>,
+  <span class="string">"amount_sent"</span>: <span class="number">100.00</span>,
+  <span class="string">"amount_received"</span>: <span class="number">1850.00</span>,
+  <span class="string">"exchange_rate"</span>: <span class="number">18.5</span>,
+  <span class="string">"fee"</span>: <span class="number">0.50</span>,
+  <span class="string">"estimated_delivery"</span>: <span class="string">"2025-05-22T15:30:00Z"</span>,
+  <span class="string">"stablecoin_used"</span>: <span class="string">"USDC"</span>
+}</div>
+      </div>
+
+      <div class="endpoint">
+        <div style="margin-bottom: 1rem;">
+          <span class="method get">GET</span>
+          <code>/transfers/{transfer_id}</code>
+        </div>
+        <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Get transfer status and details.</p>
+        
+        <h4 style="font-weight: 600; margin-bottom: 1rem; color: var(--text-dark);">Response</h4>
+        <div class="code-block">{
+  <span class="string">"transfer_id"</span>: <span class="string">"tx_7f8g9h0i1j"</span>,
+  <span class="string">"status"</span>: <span class="string">"completed"</span>,
+  <span class="string">"blockchain_tx"</span>: <span class="string">"0x1a2b3c4d..."</span>,
+  <span class="string">"completed_at"</span>: <span class="string">"2025-05-22T15:25:30Z"</span>
+}</div>
+      </div>
+    </section>
+
+    <!-- Stablecoins -->
+    <section id="stablecoins">
+      <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--text-dark);">Stablecoins</h2>
+      
+      <div class="endpoint">
+        <div style="margin-bottom: 1rem;">
+          <span class="method get">GET</span>
+          <code>/stablecoins/rates</code>
+        </div>
+        <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Get current stablecoin exchange rates.</p>
+        
+        <h4 style="font-weight: 600; margin-bottom: 1rem; color: var(--text-dark);">Response</h4>
+        <div class="code-block">{
+  <span class="string">"rates"</span>: {
+    <span class="string">"USDC"</span>: {
+      <span class="string">"USD"</span>: <span class="number">1.00</span>,
+      <span class="string">"ZAR"</span>: <span class="number">18.5</span>,
+      <span class="string">"EUR"</span>: <span class="number">0.92</span>
+    },
+    <span class="string">"USDT"</span>: {
+      <span class="string">"USD"</span>: <span class="number">0.999</span>,
+      <span class="string">"ZAR"</span>: <span class="number">18.48</span>
+    }
+  },
+  <span class="string">"updated_at"</span>: <span class="string">"2025-05-22T14:30:00Z"</span>
+}</div>
+      </div>
+
+      <div class="endpoint">
+        <div style="margin-bottom: 1rem;">
+          <span class="method post">POST</span>
+          <code>/stablecoins/convert</code>
+        </div>
+        <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Convert between stablecoins and fiat currencies.</p>
+        
+        <h4 style="font-weight: 600; margin-bottom: 1rem; color: var(--text-dark);">Request Body</h4>
+        <div class="code-block">{
+  <span class="string">"amount"</span>: <span class="number">100</span>,
+  <span class="string">"from"</span>: <span class="string">"USD"</span>,
+  <span class="string">"to"</span>: <span class="string">"USDC"</span>,
+  <span class="string">"wallet_address"</span>: <span class="string">"0x742d35Cc6642C173a5B6A55FBe"</span>
+}</div>
+      </div>
+    </section>
+
+    <!-- Webhooks -->
+    <section id="webhooks">
+      <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--text-dark);">Webhooks</h2>
+      
+      <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+        Receive real-time notifications about transfer status changes, voice authentication events, and system updates.
+      </p>
+
+      <div class="endpoint">
+        <h4 style="font-weight: 600; margin-bottom: 1rem; color: var(--text-dark);">Webhook Events</h4>
+        <ul style="list-style: none; margin-bottom: 1.5rem;">
+          <li style="margin-bottom: 0.5rem;"><span class="param">transfer.created</span> - New transfer initiated</li>
+          <li style="margin-bottom: 0.5rem;"><span class="param">transfer.processing</span> - Transfer being processed</li>
+          <li style="margin-bottom: 0.5rem;"><span class="param">transfer.completed</span> - Transfer completed successfully</li>
+          <li style="margin-bottom: 0.5rem;"><span class="param">transfer.failed</span> - Transfer failed</li>
+          <li style="margin-bottom: 0.5rem;"><span class="param">voice.verified</span> - Voice authentication successful</li>
+          <li><span class="param">voice.failed</span> - Voice authentication failed</li>
+        </ul>
+
+        <h4 style="font-weight: 600; margin-bottom: 1rem; color: var(--text-dark);">Webhook Payload Example</h4>
+        <div class="code-block">{
+  <span class="string">"event"</span>: <span class="string">"transfer.completed"</span>,
+  <span class="string">"data"</span>: {
+    <span class="string">"transfer_id"</span>: <span class="string">"tx_7f8g9h0i1j"</span>,
+    <span class="string">"status"</span>: <span class="string">"completed"</span>,
+    <span class="string">"amount"</span>: <span class="number">100.00</span>,
+    <span class="string">"currency"</span>: <span class="string">"USD"</span>,
+    <span class="string">"completed_at"</span>: <span class="string">"2025-05-22T15:25:30Z"</span>
+  },
+  <span class="string">"timestamp"</span>: <span class="string">"2025-05-22T15:25:30Z"</span>
+}</div>
+      </div>
+    </section>
+
+    <!-- Error Handling -->
+    <section id="errors">
+      <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--text-dark);">Error Handling</h2>
+      
+      <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-md); border: 1px solid rgba(129, 140, 248, 0.1); margin-bottom: 2rem;">
+        <h4 style="font-weight: 600; margin-bottom: 1rem; color: var(--text-dark);">HTTP Status Codes</h4>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+          <div><span style="color: var(--tertiary); font-weight: 600;">200</span> - Success</div>
+          <div><span style="color: var(--secondary); font-weight: 600;">400</span> - Bad Request</div>
+          <div><span style="color: var(--secondary); font-weight: 600;">401</span> - Unauthorized</div>
+          <div><span style="color: var(--secondary); font-weight: 600;">403</span> - Forbidden</div>
+          <div><span style="color: var(--secondary); font-weight: 600;">429</span> - Rate Limited</div>
+          <div><span style="color: var(--secondary); font-weight: 600;">500</span> - Server Error</div>
+        </div>
+      </div>
+
+      <div class="endpoint">
+        <h4 style="font-weight: 600; margin-bottom: 1rem; color: var(--text-dark);">Error Response Format</h4>
+        <div class="code-block">{
+  <span class="string">"error"</span>: {
+    <span class="string">"code"</span>: <span class="string">"VOICE_VERIFICATION_FAILED"</span>,
+    <span class="string">"message"</span>: <span class="string">"Voice authentication failed. Please try again."</span>,
+    <span class="string">"details"</span>: {
+      <span class="string">"confidence_score"</span>: <span class="number">0.65</span>,
+      <span class="string">"required_score"</span>: <span class="number">0.80</span>
+    }
+  }
+}</div>
+      </div>
+    </section>
+
+    <!-- SDKs -->
+    <section id="sdks">
+      <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--text-dark);">SDKs & Examples</h2>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+        <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-md); border: 1px solid rgba(129, 140, 248, 0.1); text-align: center;">
+          <i class="fab fa-js-square" style="font-size: 3rem; color: #f7df1e; margin-bottom: 1rem;"></i>
+          <h3 style="font-weight: 700; margin-bottom: 1rem; color: var(--text-dark);">JavaScript/Node.js</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">Official SDK with TypeScript support</p>
+          <a href="#" class="secondary-btn" style="font-size: 0.9rem;">npm install @remittease/sdk</a>
+        </div>
+        
+        <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-md); border: 1px solid rgba(129, 140, 248, 0.1); text-align: center;">
+          <i class="fab fa-python" style="font-size: 3rem; color: #3776ab; margin-bottom: 1rem;"></i>
+          <h3 style="font-weight: 700; margin-bottom: 1rem; color: var(--text-dark);">Python</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">Python SDK with async support</p>
+          <a href="#" class="secondary-btn" style="font-size: 0.9rem;">pip install remittease</a>
+        </div>
+        
+        <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-md); border: 1px solid rgba(129, 140, 248, 0.1); text-align: center;">
+          <i class="fas fa-code" style="font-size: 3rem; color: var(--primary); margin-bottom: 1rem;"></i>
+          <h3 style="font-weight: 700; margin-bottom: 1rem; color: var(--text-dark);">cURL Examples</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">Ready-to-use API examples</p>
+          <a href="#" class="secondary-btn" style="font-size: 0.9rem;">View Examples</a>
+        </div>
+      </div>
+
+      <div class="endpoint">
+        <h4 style="font-weight: 600; margin-bottom: 1rem; color: var(--text-dark);">Quick Start - JavaScript</h4>
+        <div class="code-block"><span class="keyword">import</span> { RemittEase } <span class="keyword">from</span> <span class="string">'@remittease/sdk'</span>;
+
+<span class="keyword">const</span> client = <span class="keyword">new</span> RemittEase({
+  apiKey: <span class="string">'your_api_key'</span>,
+  environment: <span class="string">'sandbox'</span> <span class="comment">// or 'production'</span>
+});
+
+<span class="comment">// Process voice command</span>
+<span class="keyword">const</span> result = <span class="keyword">await</span> client.voice.process({
+  audioData: audioBase64,
+  userId: <span class="string">'user_123'</span>
+});
+
+<span class="comment">// Create transfer</span>
+<span class="keyword">const</span> transfer = <span class="keyword">await</span> client.transfers.create({
+  amount: <span class="number">100</span>,
+  fromCurrency: <span class="string">'USD'</span>,
+  toCurrency: <span class="string">'ZAR'</span>,
+  recipient: {
+    name: <span class="string">'John Doe'</span>,
+    email: <span class="string">'john@example.com'</span>
+  }
+});</div>
+      </div>
+
+      <div style="background: rgba(79, 70, 229, 0.05); border-radius: var(--radius-md); padding: 2rem; margin: 2rem 0;">
+        <h4 style="font-weight: 600; margin-bottom: 1rem; color: var(--text-dark);">Rate Limits</h4>
+        <ul style="list-style: none;">
+          <li style="margin-bottom: 0.5rem;">• <strong>Voice API:</strong> 100 requests per minute</li>
+          <li style="margin-bottom: 0.5rem;">• <strong>Transfers:</strong> 50 requests per minute</li>
+          <li style="margin-bottom: 0.5rem;">• <strong>General API:</strong> 1000 requests per hour</li>
+          <li>• Rate limits are per API key and reset every window</li>
+        </ul>
+      </div>
+
+      <div style="text-align: center; margin-top: 3rem;">
+        <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-dark);">Need Help?</h3>
+        <p style="color: var(--text-muted); margin-bottom: 2rem;">
+          Join our developer community or contact our technical support team.
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="https://discord.gg/ewmuwbZFgS" class="primary-btn">
+            <i class="fab fa-discord"></i> Developer Discord
+          </a>
+          <a href="contact.html" class="secondary-btn">
+            <i class="fas fa-envelope"></i> Technical Support
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script>
+    const themeToggle = document.getElementById('themeToggle');
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const backdrop = document.getElementById('backdrop');
+    const backToTop = document.getElementById('backToTop');
+
+    themeToggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark-mode');
+      themeToggle.innerHTML = document.documentElement.classList.contains('dark-mode') 
+        ? '<i class="fas fa-sun"></i>' 
+        : '<i class="fas fa-moon"></i>';
+    });
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+      backdrop.classList.toggle('active');
+      mobileMenuBtn.innerHTML = mobileMenu.classList.contains('active') 
+        ? '<i class="fas fa-times"></i>' 
+        : '<i class="fas fa-bars"></i>';
+    });
+
+    backdrop.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+      backdrop.classList.remove('active');
+      mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+    });
+
+    document.querySelectorAll('.mobile-menu .nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        backdrop.classList.remove('active');
+        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+      });
+    });
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) {
+        backToTop.classList.add('active');
+      } else {
+        backToTop.classList.remove('active');
+      }
+    });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Sidebar navigation
+    const sidebarLinks = document.querySelectorAll('.sidebar-link');
+    const sections = document.querySelectorAll('section');
+
+    function updateActiveLink() {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (pageYOffset >= sectionTop - 60) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      sidebarLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', updateActiveLink);
+
+    sidebarLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+          targetSection.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

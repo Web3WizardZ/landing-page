@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#4f46e5">
+  <title>Contact Us – RemittEase</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <a href="index.html" class="logo">
+      <img src="RE icon.png" alt="RemittEase" style="width: 32px; height: 32px; border-radius: 50%;">
+      RemittEase
+    </a>
+    <nav class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="#" class="nav-link">Security</a>
+      <a href="#" class="nav-link">Token</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode">
+        <i class="fas fa-moon"></i>
+      </button>
+      <a href="https://app.remittease.xyz" class="cta-button">Try Now</a>
+    </div>
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+      <i class="fas fa-bars"></i>
+    </button>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="#" class="nav-link">Security</a>
+    <a href="#" class="nav-link">Token</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </div>
+  <div class="backdrop" id="backdrop"></div>
+
+  <!-- Main -->
+  <main id="main" style="margin-top: 80px;">
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: 60vh;">
+      <div class="blob-container">
+        <svg class="blob-svg" viewBox="0 0 500 500" aria-hidden="true">
+          <defs>
+            <linearGradient id="blobGradient" gradientTransform="rotate(45)">
+              <stop offset="0%" stop-color="rgba(79, 70, 229, 0.4)"/>
+              <stop offset="100%" stop-color="rgba(236, 72, 153, 0.4)"/>
+            </linearGradient>
+          </defs>
+          <path fill="url(#blobGradient)" d="M421.5,304Q389,358,334.5,393.5Q280,429,225,397.5Q170,366,121,321Q72,276,88.5,210Q105,144,162,108Q219,72,278,84.5Q337,97,377.5,142Q418,187,421.5,304Z"/>
+        </svg>
+      </div>
+
+      <div class="container" style="display: flex; align-items: center; justify-content: center; text-align: center;">
+        <div style="max-width: 600px; position: relative; z-index: 10;">
+          <h1 style="font-size: 3.5rem; font-weight: 800; margin-bottom: 1.5rem; background: linear-gradient(to right, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+            Get in Touch
+          </h1>
+          <p style="font-size: 1.25rem; color: var(--text-muted); margin-bottom: 2rem;">
+            Have questions about voice transfers or stablecoin remittances? We're here to help.
+          </p>
+          <div class="feature-badges" style="justify-content: center; margin-bottom: 0;">
+            <div class="badge"><i class="fas fa-clock"></i> 24/7 Support</div>
+            <div class="badge"><i class="fas fa-reply"></i> Quick Response</div>
+            <div class="badge ai-badge"><i class="fas fa-robot"></i> AI Assistant</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Methods Section -->
+    <section class="section">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 960px; margin: 0 auto;">
+          <div class="feature-card" style="text-align: center;">
+            <div class="feature-icon">
+              <i class="fas fa-headset"></i>
+            </div>
+            <h3 class="feature-title">24/7 Support</h3>
+            <p class="feature-description">Get instant help with your transfers through our AI assistant or connect with our support team.</p>
+            <a href="https://app.remittease.xyz/support" class="primary-btn" style="margin-top: 1rem;">
+              <i class="fas fa-comments"></i> Start Chat
+            </a>
+          </div>
+          <div class="feature-card" style="text-align: center;">
+            <div class="feature-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <h3 class="feature-title">Email Support</h3>
+            <p class="feature-description">Send us detailed questions or feedback. We typically respond within 2 hours.</p>
+            <a href="mailto:support@remittease.xyz" class="primary-btn" style="margin-top: 1rem;">
+              <i class="fas fa-paper-plane"></i> Email Us
+            </a>
+          </div>
+          <div class="feature-card" style="text-align: center;">
+            <div class="feature-icon">
+              <i class="fab fa-discord"></i>
+            </div>
+            <h3 class="feature-title">Community</h3>
+            <p class="feature-description">Join our Discord community to connect with other users and get quick answers.</p>
+            <a href="https://discord.gg/ewmuwbZFgS" class="primary-btn" style="margin-top: 1rem;">
+              <i class="fab fa-discord"></i> Join Discord
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="section" style="background: linear-gradient(to right, rgba(79, 70, 229, 0.05), rgba(236, 72, 153, 0.05));">
+      <div class="container">
+        <div style="max-width: 800px; margin: 0 auto;">
+          <h2 class="section-title">Send us a Message</h2>
+          <p class="section-subtitle">We'd love to hear from you. Fill out the form below and we'll get back to you soon.</p>
+          
+          <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 3rem; box-shadow: var(--shadow-lg); border: 1px solid rgba(129, 140, 248, 0.1);">
+            <form id="contactForm">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+                <div class="form-group">
+                  <label for="firstName" class="form-label">First Name</label>
+                  <input type="text" id="firstName" name="firstName" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label for="lastName" class="form-label">Last Name</label>
+                  <input type="text" id="lastName" name="lastName" class="form-control" required>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="subject" class="form-label">Subject</label>
+                <select id="subject" name="subject" class="form-control" required>
+                  <option value="">Select a topic</option>
+                  <option value="support">Technical Support</option>
+                  <option value="voice">Voice Commands Help</option>
+                  <option value="stablecoin">Stablecoin Questions</option>
+                  <option value="partnership">Partnership Inquiry</option>
+                  <option value="press">Press & Media</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="message" class="form-label">Message</label>
+                <textarea id="message" name="message" rows="5" class="form-control" placeholder="Tell us how we can help..." required style="resize: vertical; min-height: 120px;"></textarea>
+              </div>
+              
+              <button type="submit" class="primary-btn" style="width: 100%;">
+                <i class="fas fa-paper-plane"></i> Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Links Section -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Quick Help</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 800px; margin: 0 auto;">
+          <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 2rem; text-align: center; box-shadow: var(--shadow-md); border: 1px solid rgba(129, 140, 248, 0.1);">
+            <i class="fas fa-question-circle" style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;"></i>
+            <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-dark);">FAQ</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">Common questions about voice transfers and stablecoins</p>
+            <a href="index.html#faq" class="secondary-btn" style="font-size: 0.9rem;">View FAQ</a>
+          </div>
+          
+          <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 2rem; text-align: center; box-shadow: var(--shadow-md); border: 1px solid rgba(129, 140, 248, 0.1);">
+            <i class="fas fa-shield-alt" style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;"></i>
+            <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-dark);">Security</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">Learn about voice biometrics and blockchain security</p>
+            <a href="#" class="secondary-btn" style="font-size: 0.9rem;">Security Info</a>
+          </div>
+          
+          <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 2rem; text-align: center; box-shadow: var(--shadow-md); border: 1px solid rgba(129, 140, 248, 0.1);">
+            <i class="fas fa-book" style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;"></i>
+            <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-dark);">API Docs</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">Integration guides for developers</p>
+            <a href="#" class="secondary-btn" style="font-size: 0.9rem;">View Docs</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Office Info Section -->
+    <section class="section" style="background: linear-gradient(to right, rgba(79, 70, 229, 0.05), rgba(236, 72, 153, 0.05));">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; max-width: 900px; margin: 0 auto;">
+          <div>
+            <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 1.5rem; background: linear-gradient(to right, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+              Visit Our Office
+            </h2>
+            <div style="margin-bottom: 2rem;">
+              <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-dark);">South Africa HQ</h3>
+              <p style="color: var(--text-muted); line-height: 1.6;">
+                123 Innovation Drive<br>
+                Cape Town, 8001<br>
+                South Africa
+              </p>
+            </div>
+            <div style="margin-bottom: 2rem;">
+              <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-dark);">Business Hours</h3>
+              <p style="color: var(--text-muted); line-height: 1.6;">
+                Monday - Friday: 9:00 AM - 6:00 PM SAST<br>
+                Saturday: 10:00 AM - 2:00 PM SAST<br>
+                Sunday: Closed
+              </p>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.9rem; font-style: italic;">
+              Note: Our AI support is available 24/7 for immediate assistance.
+            </p>
+          </div>
+          
+          <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-md); border: 1px solid rgba(129, 140, 248, 0.1);">
+            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--text-dark); text-align: center;">Contact Information</h3>
+            
+            <div style="margin-bottom: 1.5rem;">
+              <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <i class="fas fa-envelope" style="color: var(--primary); width: 20px;"></i>
+                <span style="color: var(--text-muted);">support@remittease.xyz</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <i class="fas fa-phone" style="color: var(--primary); width: 20px;"></i>
+                <span style="color: var(--text-muted);">+27 (0) 21 123 4567</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <i class="fab fa-twitter" style="color: var(--primary); width: 20px;"></i>
+                <a href="https://x.com/remitt_ease" style="color: var(--primary);">@remitt_ease</a>
+              </div>
+              <div style="display: flex; align-items: center; gap: 1rem;">
+                <i class="fab fa-discord" style="color: var(--primary); width: 20px;"></i>
+                <a href="https://discord.gg/ewmuwbZFgS" style="color: var(--primary);">RemittEase Community</a>
+              </div>
+            </div>
+            
+            <div style="text-align: center; padding-top: 1rem; border-top: 1px solid rgba(129, 140, 248, 0.1);">
+              <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">Follow us for updates</p>
+              <div class="social-links" style="justify-content: center;">
+                <a href="https://x.com/remitt_ease" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="https://discord.gg/ewmuwbZFgS" class="social-link"><i class="fab fa-discord"></i></a>
+                <a href="https://medium.com/@RemittEase" class="social-link"><i class="fab fa-medium"></i></a>
+                <a href="https://open.spotify.com/show/5Gx98emQG99UwMSsF9hoR4" class="social-link"><i class="fab fa-spotify"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-column">
+        <div class="footer-logo">RemittEase</div>
+        <p class="footer-description">Making global remittances fast, affordable, and accessible with AI and blockchain technology.</p>
+        <div class="social-links">
+          <a href="https://x.com/remitt_ease" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="https://discord.gg/ewmuwbZFgS" class="social-link"><i class="fab fa-discord"></i></a>
+          <a href="https://medium.com/@RemittEase" class="social-link"><i class="fab fa-medium"></i></a>
+          <a href="https://open.spotify.com/show/5Gx98emQG99UwMSsF9hoR4" class="social-link"><i class="fab fa-spotify"></i></a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h4>Company</h4>
+        <div class="footer-links">
+          <a href="about.html" class="footer-link">About Us</a>
+          <a href="#" class="footer-link">Careers</a>
+          <a href="#" class="footer-link">Blog</a>
+          <a href="#" class="footer-link">Press</a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h4>Product</h4>
+        <div class="footer-links">
+          <a href="#" class="footer-link">Features</a>
+          <a href="#" class="footer-link">Security</a>
+          <a href="#" class="footer-link">Token</a>
+          <a href="#" class="footer-link">Roadmap</a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h4>Support</h4>
+        <div class="footer-links">
+          <a href="#" class="footer-link">Help Center</a>
+          <a href="contact.html" class="footer-link">Contact Us</a>
+          <a href="#" class="footer-link">Status</a>
+          <a href="#" class="footer-link">API Docs</a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; 2025 RemittEase. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast">
+    <div class="toast-icon">
+      <i class="fas fa-check-circle"></i>
+    </div>
+    <div class="toast-message">Message sent successfully!</div>
+    <button class="toast-close" id="toastClose">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    // Theme Toggle and Mobile Menu (same as other pages)
+    const themeToggle = document.getElementById('themeToggle');
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const backdrop = document.getElementById('backdrop');
+    const backToTop = document.getElementById('backToTop');
+    const toast = document.getElementById('toast');
+    const toastClose = document.getElementById('toastClose');
+
+    themeToggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark-mode');
+      themeToggle.innerHTML = document.documentElement.classList.contains('dark-mode') 
+        ? '<i class="fas fa-sun"></i>' 
+        : '<i class="fas fa-moon"></i>';
+    });
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+      backdrop.classList.toggle('active');
+      mobileMenuBtn.innerHTML = mobileMenu.classList.contains('active') 
+        ? '<i class="fas fa-times"></i>' 
+        : '<i class="fas fa-bars"></i>';
+    });
+
+    backdrop.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+      backdrop.classList.remove('active');
+      mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+    });
+
+    document.querySelectorAll('.mobile-menu .nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        backdrop.classList.remove('active');
+        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+      });
+    });
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) {
+        backToTop.classList.add('active');
+      } else {
+        backToTop.classList.remove('active');
+      }
+    });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Contact Form
+    const contactForm = document.getElementById('contactForm');
+    
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      // Get form data
+      const formData = new FormData(contactForm);
+      const data = Object.fromEntries(formData);
+      
+      // Simple validation
+      if (!data.firstName || !data.lastName || !data.email || !data.subject || !data.message) {
+        showToast('Please fill in all required fields', 'error');
+        return;
+      }
+      
+      // Simulate form submission
+      const submitButton = contactForm.querySelector('button[type="submit"]');
+      const originalText = submitButton.innerHTML;
+      
+      submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+      submitButton.disabled = true;
+      
+      setTimeout(() => {
+        // Reset form
+        contactForm.reset();
+        
+        // Reset button
+        submitButton.innerHTML = originalText;
+        submitButton.disabled = false;
+        
+        // Show success message
+        showToast('Message sent successfully! We\'ll get back to you soon.');
+      }, 2000);
+    });
+
+    // Toast function
+    toastClose.addEventListener('click', () => {
+      toast.classList.remove('active');
+    });
+
+    function showToast(message, type = 'success') {
+      const toastMessage = document.querySelector('.toast-message');
+      const toastIcon = document.querySelector('.toast-icon i');
+      
+      toastMessage.textContent = message;
+      
+      if (type === 'error') {
+        toastIcon.className = 'fas fa-exclamation-circle';
+        toastIcon.style.color = '#ef4444';
+      } else {
+        toastIcon.className = 'fas fa-check-circle';
+        toastIcon.style.color = 'var(--tertiary)';
+      }
+      
+      toast.classList.add('active');
+      
+      setTimeout(() => {
+        toast.classList.remove('active');
+      }, 4000);
+    }
+  </script>
+</body>
+</html>

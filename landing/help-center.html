@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#4f46e5">
+  <title>Help Center – RemittEase</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <a href="index.html" class="logo">
+      <img src="RE icon.png" alt="RemittEase" style="width: 32px; height: 32px; border-radius: 50%;">
+      RemittEase
+    </a>
+    <nav class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="security.html" class="nav-link">Security</a>
+      <a href="token.html" class="nav-link">Token</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode">
+        <i class="fas fa-moon"></i>
+      </button>
+      <a href="https://app.remittease.xyz" class="cta-button">Try Now</a>
+    </div>
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+      <i class="fas fa-bars"></i>
+    </button>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="security.html" class="nav-link">Security</a>
+    <a href="token.html" class="nav-link">Token</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </div>
+  <div class="backdrop" id="backdrop"></div>
+
+  <!-- Main -->
+  <main id="main" style="margin-top: 80px;">
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: 60vh;">
+      <div class="blob-container">
+        <svg class="blob-svg" viewBox="0 0 500 500" aria-hidden="true">
+          <defs>
+            <linearGradient id="blobGradient" gradientTransform="rotate(45)">
+              <stop offset="0%" stop-color="rgba(79, 70, 229, 0.4)"/>
+              <stop offset="100%" stop-color="rgba(236, 72, 153, 0.4)"/>
+            </linearGradient>
+          </defs>
+          <path fill="url(#blobGradient)" d="M421.5,304Q389,358,334.5,393.5Q280,429,225,397.5Q170,366,121,321Q72,276,88.5,210Q105,144,162,108Q219,72,278,84.5Q337,97,377.5,142Q418,187,421.5,304Z"/>
+        </svg>
+      </div>
+
+      <div class="container" style="display: flex; align-items: center; justify-content: center; text-align: center;">
+        <div style="max-width: 700px; position: relative; z-index: 10;">
+          <h1 style="font-size: 3.5rem; font-weight: 800; margin-bottom: 1.5rem; background: linear-gradient(to right, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+            Help Center
+          </h1>
+          <p style="font-size: 1.25rem; color: var(--text-muted); margin-bottom: 2rem;">
+            Get help with voice transfers, stablecoins, and everything RemittEase.
+          </p>
+          
+          <!-- Search Bar -->
+          <div style="background: var(--card-bg); border-radius: var(--radius-full); padding: 0.75rem 1.5rem; box-shadow: var(--shadow-lg); border: 1px solid rgba(129, 140, 248, 0.2); display: flex; align-items: center; gap: 1rem; max-width: 500px; margin: 0 auto;">
+            <i class="fas fa-search" style="color: var(--primary);"></i>
+            <input type="text" placeholder="Search help articles..." style="flex: 1; background: none; border: none; outline: none; color: var(--text-dark); font-size: 1rem;" id="searchInput">
+            <button style="background: var(--primary); color: white; padding: 0.5rem 1rem; border-radius: var(--radius-full); font-size: 0.9rem;">Search</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Actions -->
+    <section class="section" style="padding-top: 3rem;">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 800px; margin: 0 auto;">
+          <a href="#getting-started" style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 2rem; text-align: center; box-shadow: var(--shadow-md); border: 1px solid rgba(129, 140, 248, 0.1); transition: transform var(--transition), box-shadow var(--transition); display: block;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='var(--shadow-lg)'" onmouseout="this.style.transform=''; this.style.boxShadow='var(--shadow-md)'">
+            <i class="fas fa-play-circle" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem;"></i>
+            <h3 style="font-weight: 700; margin-bottom: 0.5rem; color: var(--text-dark);">Getting Started</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Setup your account and make your first voice transfer</p>
+          </a>
+          
+          <a href="#voice-commands" style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 2rem; text-align: center; box-shadow: var(--shadow-md); border: 1px solid rgba(129, 140, 248, 0.1); transition: transform var(--transition), box-shadow var(--transition); display: block;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='var(--shadow-lg)'" onmouseout="this.style.transform=''; this.style.boxShadow='var(--shadow-md)'">
+            <i class="fas fa-microphone" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem;"></i>
+            <h3 style="font-weight: 700; margin-bottom: 0.5rem; color: var(--text-dark);">Voice Commands</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Learn how to use voice commands effectively</p>
+          </a>
+          
+          <a href="#troubleshooting" style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 2rem; text-align: center; box-shadow: var(--shadow-md); border: 1px solid rgba(129, 140, 248, 0.1); transition: transform var(--transition), box-shadow var(--transition); display: block;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='var(--shadow-lg)'" onmouseout="this.style.transform=''; this.style.boxShadow='var(--shadow-md)'">
+            <i class="fas fa-tools" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem;"></i>
+            <h3 style="font-weight: 700; margin-bottom: 0.5rem; color: var(--text-dark);">Troubleshooting</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Fix common issues and problems</p>
+          </a>
+          
+          <a href="contact.html" style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 2rem; text-align: center; box-shadow: var(--shadow-md); border: 1px solid rgba(129, 140, 248, 0.1); transition: transform var(--transition), box-shadow var(--transition); display: block;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='var(--shadow-lg)'" onmouseout="this.style.transform=''; this.style.boxShadow='var(--shadow-md)'">
+            <i class="fas fa-headset" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem;"></i>
+            <h3 style="font-weight: 700; margin-bottom: 0.5rem; color: var(--text-dark);">Contact Support</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Chat with our support team 24/7</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Popular Articles -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Popular Articles</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
+          <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-md); border: 1px solid rgba(129, 140, 248, 0.1);">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+              <i class="fas fa-microphone" style="color: var(--primary); font-size: 1.5rem;"></i>
+              <h3 style="font-weight: 700; color: var(--text-dark);">How to Set Up Voice Commands</h3>
+            </div>
+            <p style="color: var(--text-muted); margin-bottom: 1rem;">Complete guide to training your voice model and setting up secure voice authentication for transfers.</p>
+            <a href="#" style="color: var(--primary); font-weight: 600; font-size: 0.9rem;">Read Article →</a>
+          </div>
+          
+          <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-md); border: 1px solid rgba(129, 140, 248, 0.1);">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+              <i class="fas fa-coins" style="color: var(--primary); font-size: 1.5rem;"></i>
+              <h3 style="font-weight: 700; color: var(--text-dark);">Understanding Stablecoin Conversion</h3>
+            </div>
+            <p style="color: var(--text-muted); margin-bottom: 1rem;">Learn how we automatically convert your money to stablecoins for fast, secure transfers.</p>
+            <a href="#" style="color: var(--primary); font-weight: 600; font-size: 0.9rem;">Read Article →</a>
+          </div>
+          
+          <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-md); border: 1px solid rgba(129, 140, 248, 0.1);">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+              <i class="fas fa-shield-alt" style="color: var(--primary); font-size: 1.5rem;"></i>
+              <h3 style="font-weight: 700; color: var(--text-dark);">Voice Security & Biometrics</h3>
+            </div>
+            <p style="color: var(--text-muted); margin-bottom: 1rem;">How voice biometric authentication works and keeps your transfers secure.</p>
+            <a href="#" style="color: var(--primary); font-weight: 600; font-size: 0.9rem;">Read Article →</a>
+          </div>
+          
+          <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-md); border: 1px solid rgba(129, 140, 248, 0.1);">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+              <i class="fas fa-clock" style="color: var(--primary); font-size: 1.5rem;"></i>
+              <h3 style="font-weight: 700; color: var(--text-dark);">Transfer Times & Tracking</h3>
+            </div>
+            <p style="color: var(--text-muted); margin-bottom: 1rem;">Expected transfer times and how to track your money from voice command to delivery.</p>
+            <a href="#" style="color: var(--primary); font-weight: 600; font-size: 0.9rem;">Read Article →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Help Categories -->
+    <section id="categories" class="section" style="background: linear-gradient(to right, rgba(79, 70, 229, 0.05), rgba(236, 72, 153, 0.05));">
+      <div class="container">
+        <h2 class="section-title">Browse by Category</h2>
+        
+        <!-- Getting Started -->
+        <div id="getting-started" style="margin-bottom: 3rem;">
+          <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--text-dark); display: flex; align-items: center; gap: 0.75rem;">
+            <i class="fas fa-play-circle" style="color: var(--primary);"></i>
+            Getting Started
+          </h3>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
+            <a href="#" style="background: var(--card-bg); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid rgba(129, 140, 248, 0.1); display: block; transition: transform var(--transition);" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
+              <h4 style="font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem;">Creating Your Account</h4>
+              <p style="color: var(--text-muted); font-size: 0.9rem;">Step-by-step account setup and verification</p>
+            </a>
+            <a href="#" style="background: var(--card-bg); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid rgba(129, 140, 248, 0.1); display: block; transition: transform var(--transition);" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
+              <h4 style="font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem;">First Voice Transfer</h4>
+              <p style="color: var(--text-muted); font-size: 0.9rem;">Complete your first "Send $100 to mom" transfer</p>
+            </a>
+            <a href="#" style="background: var(--card-bg); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid rgba(129, 140, 248, 0.1); display: block; transition: transform var(--transition);" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
+              <h4 style="font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem;">Adding Recipients</h4>
+              <p style="color: var(--text-muted); font-size: 0.9rem;">How to add family and friends to your contacts</p>
+            </a>
+          </div>
+        </div>
+
+        <!-- Voice Commands -->
+        <div id="voice-commands" style="margin-bottom: 3rem;">
+          <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--text-dark); display: flex; align-items: center; gap: 0.75rem;">
+            <i class="fas fa-microphone" style="color: var(--primary);"></i>
+            Voice Commands
+          </h3>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
+            <a href="#" style="background: var(--card-bg); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid rgba(129, 140, 248, 0.1); display: block; transition: transform var(--transition);" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
+              <h4 style="font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem;">Voice Training</h4>
+              <p style="color: var(--text-muted); font-size: 0.9rem;">Train AI to recognize your voice accurately</p>
+            </a>
+            <a href="#" style="background: var(--card-bg); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid rgba(129, 140, 248, 0.1); display: block; transition: transform var(--transition);" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
+              <h4 style="font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem;">Supported Commands</h4>
+              <p style="color: var(--text-muted); font-size: 0.9rem;">All voice commands you can use for transfers</p>
+            </a>
+            <a href="#" style="background: var(--card-bg); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid rgba(129, 140, 248, 0.1); display: block; transition: transform var(--transition);" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
+              <h4 style="font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem;">Multi-Language Support</h4>
+              <p style="color: var(--text-muted); font-size: 0.9rem;">Using voice commands in different languages</p>
+            </a>
+          </div>
+        </div>
+
+        <!-- Troubleshooting -->
+        <div id="troubleshooting" style="margin-bottom: 3rem;">
+          <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--text-dark); display: flex; align-items: center; gap: 0.75rem;">
+            <i class="fas fa-tools" style="color: var(--primary);"></i>
+            Troubleshooting
+          </h3>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
+            <a href="#" style="background: var(--card-bg); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid rgba(129, 140, 248, 0.1); display: block; transition: transform var(--transition);" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
+              <h4 style="font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem;">Voice Not Recognized</h4>
+              <p style="color: var(--text-muted); font-size: 0.9rem;">Fix voice authentication issues</p>
+            </a>
+            <a href="#" style="background: var(--card-bg); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid rgba(129, 140, 248, 0.1); display: block; transition: transform var(--transition);" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
+              <h4 style="font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem;">Failed Transfers</h4>
+              <p style="color: var(--text-muted); font-size: 0.9rem;">What to do when transfers fail</p>
+            </a>
+            <a href="#" style="background: var(--card-bg); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid rgba(129, 140, 248, 0.1); display: block; transition: transform var(--transition);" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
+              <h4 style="font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem;">App Issues</h4>
+              <p style="color: var(--text-muted); font-size: 0.9rem;">Common app problems and solutions</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video Tutorials -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Video Tutorials</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+          <div style="background: var(--card-bg); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid rgba(129, 140, 248, 0.1);">
+            <div style="aspect-ratio: 16/9; background: linear-gradient(135deg, var(--primary), var(--secondary)); display: flex; align-items: center; justify-content: center; position: relative;">
+              <i class="fas fa-play" style="font-size: 3rem; color: white; opacity: 0.8;"></i>
+              <div style="position: absolute; bottom: 1rem; left: 1rem; background: rgba(0,0,0,0.7); color: white; padding: 0.25rem 0.5rem; border-radius: var(--radius-sm); font-size: 0.8rem;">3:45</div>
+            </div>
+            <div style="padding: 1.5rem;">
+              <h3 style="font-weight: 700; margin-bottom: 0.5rem; color: var(--text-dark);">Voice Command Setup</h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem;">Complete walkthrough of setting up voice commands</p>
+            </div>
+          </div>
+          
+          <div style="background: var(--card-bg); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid rgba(129, 140, 248, 0.1);">
+            <div style="aspect-ratio: 16/9; background: linear-gradient(135deg, var(--secondary), var(--tertiary)); display: flex; align-items: center; justify-content: center; position: relative;">
+              <i class="fas fa-play" style="font-size: 3rem; color: white; opacity: 0.8;"></i>
+              <div style="position: absolute; bottom: 1rem; left: 1rem; background: rgba(0,0,0,0.7); color: white; padding: 0.25rem 0.5rem; border-radius: var(--radius-sm); font-size: 0.8rem;">2:15</div>
+            </div>
+            <div style="padding: 1.5rem;">
+              <h3 style="font-weight: 700; margin-bottom: 0.5rem; color: var(--text-dark);">Your First Transfer</h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem;">Step-by-step first transfer tutorial</p>
+            </div>
+          </div>
+          
+          <div style="background: var(--card-bg); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid rgba(129, 140, 248, 0.1);">
+            <div style="aspect-ratio: 16/9; background: linear-gradient(135deg, var(--tertiary), var(--primary)); display: flex; align-items: center; justify-content: center; position: relative;">
+              <i class="fas fa-play" style="font-size: 3rem; color: white; opacity: 0.8;"></i>
+              <div style="position: absolute; bottom: 1rem; left: 1rem; background: rgba(0,0,0,0.7); color: white; padding: 0.25rem 0.5rem; border-radius: var(--radius-sm); font-size: 0.8rem;">4:20</div>
+            </div>
+            <div style="padding: 1.5rem;">
+              <h3 style="font-weight: 700; margin-bottom: 0.5rem; color: var(--text-dark);">Security Features</h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem;">Understanding voice biometrics and security</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Support Options -->
+    <section class="section" style="background: linear-gradient(to right, rgba(79, 70, 229, 0.05), rgba(236, 72, 153, 0.05));">
+      <div class="container">
+        <h2 class="section-title">Still Need Help?</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 800px; margin: 0 auto;">
+          <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 2rem; text-align: center; box-shadow: var(--shadow-md); border: 1px solid rgba(129, 140, 248, 0.1);">
+            <i class="fas fa-comments" style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;"></i>
+            <h3 style="font-weight: 700; margin-bottom: 1rem; color: var(--text-dark);">Live Chat</h3>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.9rem;">Chat with our AI assistant or human agents 24/7</p>
+            <a href="https://app.remittease.xyz/chat" class="primary-btn" style="font-size: 0.9rem;">Start Chat</a>
+          </div>
+          
+          <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 2rem; text-align: center; box-shadow: var(--shadow-md); border: 1px solid rgba(129, 140, 248, 0.1);">
+            <i class="fas fa-envelope" style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;"></i>
+            <h3 style="font-weight: 700; margin-bottom: 1rem; color: var(--text-dark);">Email Support</h3>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.9rem;">Get detailed help via email within 2 hours</p>
+            <a href="mailto:support@remittease.xyz" class="secondary-btn" style="font-size: 0.9rem;">Email Us</a>
+          </div>
+          
+          <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 2rem; text-align: center; box-shadow: var(--shadow-md); border: 1px solid rgba(129, 140, 248, 0.1);">
+            <i class="fab fa-discord" style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;"></i>
+            <h3 style="font-weight: 700; margin-bottom: 1rem; color: var(--text-dark);">Community</h3>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.9rem;">Join our Discord community for peer support</p>
+            <a href="https://discord.gg/ewmuwbZFgS" class="secondary-btn" style="font-size: 0.9rem;">Join Discord</a>
+          </div>
+          
+          <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 2rem; text-align: center; box-shadow: var(--shadow-md); border: 1px solid rgba(129, 140, 248, 0.1);">
+            <i class="fas fa-heartbeat" style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;"></i>
+            <h3 style="font-weight: 700; margin-bottom: 1rem; color: var(--text-dark);">System Status</h3>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.9rem;">Check if our services are running normally</p>
+            <a href="https://status.remittease.xyz" class="secondary-btn" style="font-size: 0.9rem;">View Status</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-column">
+        <div class="footer-logo">RemittEase</div>
+        <p class="footer-description">Making global remittances fast, affordable, and accessible with AI and blockchain technology.</p>
+        <div class="social-links">
+          <a href="https://x.com/remitt_ease" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="https://discord.gg/ewmuwbZFgS" class="social-link"><i class="fab fa-discord"></i></a>
+          <a href="https://medium.com/@RemittEase" class="social-link"><i class="fab fa-medium"></i></a>
+          <a href="https://open.spotify.com/show/5Gx98emQG99UwMSsF9hoR4" class="social-link"><i class="fab fa-spotify"></i></a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h4>Company</h4>
+        <div class="footer-links">
+          <a href="about.html" class="footer-link">About Us</a>
+          <a href="careers.html" class="footer-link">Careers</a>
+          <a href="#" class="footer-link">Blog</a>
+          <a href="#" class="footer-link">Press</a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h4>Product</h4>
+        <div class="footer-links">
+          <a href="#" class="footer-link">Features</a>
+          <a href="security.html" class="footer-link">Security</a>
+          <a href="token.html" class="footer-link">Token</a>
+          <a href="#" class="footer-link">Roadmap</a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h4>Support</h4>
+        <div class="footer-links">
+          <a href="help-center.html" class="footer-link">Help Center</a>
+          <a href="contact.html" class="footer-link">Contact Us</a>
+          <a href="#" class="footer-link">Status</a>
+          <a href="api-docs.html" class="footer-link">API Docs</a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; 2025 RemittEase. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script>
+    const themeToggle = document.getElementById('themeToggle');
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const backdrop = document.getElementById('backdrop');
+    const backToTop = document.getElementById('backToTop');
+    const searchInput = document.getElementById('searchInput');
+
+    themeToggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark-mode');
+      themeToggle.innerHTML = document.documentElement.classList.contains('dark-mode') 
+        ? '<i class="fas fa-sun"></i>' 
+        : '<i class="fas fa-moon"></i>';
+    });
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+      backdrop.classList.toggle('active');
+      mobileMenuBtn.innerHTML = mobileMenu.classList.contains('active') 
+        ? '<i class="fas fa-times"></i>' 
+        : '<i class="fas fa-bars"></i>';
+    });
+
+    backdrop.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+      backdrop.classList.remove('active');
+      mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+    });
+
+    document.querySelectorAll('.mobile-menu .nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        backdrop.classList.remove('active');
+        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+      });
+    });
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) {
+        backToTop.classList.add('active');
+      } else {
+        backToTop.classList.remove('active');
+      }
+    });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Search functionality
+    searchInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        const query = searchInput.value.toLowerCase();
+        if (query.includes('voice') || query.includes('command')) {
+          document.getElementById('voice-commands').scrollIntoView({ behavior: 'smooth' });
+        } else if (query.includes('transfer') || query.includes('send')) {
+          document.getElementById('getting-started').scrollIntoView({ behavior: 'smooth' });
+        } else if (query.includes('problem') || query.includes('issue') || query.includes('fix')) {
+          document.getElementById('troubleshooting').scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    });
+  </script>
+</body>
+</html>

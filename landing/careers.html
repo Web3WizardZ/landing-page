@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#4f46e5">
+  <title>Careers – RemittEase</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <a href="index.html" class="logo">
+      <img src="RE icon.png" alt="RemittEase" style="width: 32px; height: 32px; border-radius: 50%;">
+      RemittEase
+    </a>
+    <nav class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="security.html" class="nav-link">Security</a>
+      <a href="token.html" class="nav-link">Token</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode">
+        <i class="fas fa-moon"></i>
+      </button>
+      <a href="https://app.remittease.xyz" class="cta-button">Try Now</a>
+    </div>
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+      <i class="fas fa-bars"></i>
+    </button>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="security.html" class="nav-link">Security</a>
+    <a href="token.html" class="nav-link">Token</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </div>
+  <div class="backdrop" id="backdrop"></div>
+
+  <!-- Main -->
+  <main id="main" style="margin-top: 80px;">
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: 70vh;">
+      <div class="blob-container">
+        <svg class="blob-svg" viewBox="0 0 500 500" aria-hidden="true">
+          <defs>
+            <linearGradient id="blobGradient" gradientTransform="rotate(45)">
+              <stop offset="0%" stop-color="rgba(79, 70, 229, 0.4)"/>
+              <stop offset="100%" stop-color="rgba(236, 72, 153, 0.4)"/>
+            </linearGradient>
+          </defs>
+          <path fill="url(#blobGradient)" d="M421.5,304Q389,358,334.5,393.5Q280,429,225,397.5Q170,366,121,321Q72,276,88.5,210Q105,144,162,108Q219,72,278,84.5Q337,97,377.5,142Q418,187,421.5,304Z"/>
+        </svg>
+      </div>
+
+      <div class="container" style="display: flex; align-items: center; justify-content: center; text-align: center;">
+        <div style="max-width: 800px; position: relative; z-index: 10;">
+          <h1 style="font-size: 3.5rem; font-weight: 800; margin-bottom: 1.5rem; background: linear-gradient(to right, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+            Join Our Mission
+          </h1>
+          <p style="font-size: 1.25rem; color: var(--text-muted); margin-bottom: 2rem;">
+            Help us revolutionize global remittances with voice AI and blockchain technology. Build the future where sending money is as simple as speaking.
+          </p>
+          <div class="feature-badges" style="justify-content: center; margin-bottom: 2rem;">
+            <div class="badge ai-badge"><i class="fas fa-globe"></i> Remote-First</div>
+            <div class="badge"><i class="fas fa-rocket"></i> Fast Growth</div>
+            <div class="badge"><i class="fas fa-users"></i> Diverse Team</div>
+          </div>
+          <a href="#positions" class="primary-btn">
+            <i class="fas fa-briefcase"></i> View Open Positions
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Join Us -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Why Join RemittEase?</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-bottom: 4rem;">
+          <div>
+            <h3 style="font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--text-dark);">
+              Shape the Future of Finance
+            </h3>
+            <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 1.5rem;">
+              We're not just building another fintech app. We're creating the first voice-native financial platform that makes sending money as natural as having a conversation.
+            </p>
+            <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 1.5rem;">
+              Join a team of passionate builders working on cutting-edge AI, blockchain, and financial technology that directly impacts millions of families worldwide.
+            </p>
+            <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+              <div style="text-align: center;">
+                <div style="font-size: 2rem; font-weight: 800; color: var(--primary);">$2M+</div>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Funding Raised</p>
+              </div>
+              <div style="text-align: center;">
+                <div style="font-size: 2rem; font-weight: 800; color: var(--primary);">15+</div>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Team Members</p>
+              </div>
+              <div style="text-align: center;">
+                <div style="font-size: 2rem; font-weight: 800; color: var(--primary);">5</div>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Countries</p>
+              </div>
+            </div>
+          </div>
+          
+          <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-md); border: 1px solid rgba(129, 140, 248, 0.1);">
+            <h4 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--text-dark);">Our Values</h4>
+            <div style="space-y: 1rem;">
+              <div style="margin-bottom: 1rem;">
+                <h5 style="font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem;">Innovation First</h5>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Push boundaries with AI and blockchain</p>
+              </div>
+              <div style="margin-bottom: 1rem;">
+                <h5 style="font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem;">Global Impact</h5>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Build technology that serves everyone</p>
+              </div>
+              <div style="margin-bottom: 1rem;">
+                <h5 style="font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem;">Radical Transparency</h5>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Open communication and honest feedback</p>
+              </div>
+              <div>
+                <h5 style="font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem;">Continuous Learning</h5>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Grow together as technology evolves</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="section" style="background: linear-gradient(to right, rgba(79, 70, 229, 0.05), rgba(236, 72, 153, 0.05));">
+      <div class="container">
+        <h2 class="section-title">Benefits & Perks</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-home"></i>
+            </div>
+            <h3 class="feature-title">Remote-First Culture</h3>
+            <p class="feature-description">Work from anywhere with flexible hours. We believe in results, not location. Optional co-working space allowances.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-coins"></i>
+            </div>
+            <h3 class="feature-title">Competitive Equity</h3>
+            <p class="feature-description">Significant equity package with early employee benefits. Share in our success as we grow and scale globally.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h3 class="feature-title">Learning Budget</h3>
+            <p class="feature-description">$2,000 annual learning budget for courses, conferences, books, and certifications to advance your skills.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-heart"></i>
+            </div>
+            <h3 class="feature-title">Health & Wellness</h3>
+            <p class="feature-description">Comprehensive health insurance, mental health support, and wellness stipend for gym/fitness activities.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-laptop"></i>
+            </div>
+            <h3 class="feature-title">Top-Tier Equipment</h3>
+            <p class="feature-description">Latest MacBook Pro, monitor, and any tools you need to do your best work. Upgrade every 2 years.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-calendar-alt"></i>
+            </div>
+            <h3 class="feature-title">Unlimited PTO</h3>
+            <p class="feature-description">Take time when you need it. We encourage at least 3 weeks per year plus company-wide shutdown periods.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Open Positions -->
+    <section id="positions" class="section">
+      <div class="container">
+        <h2 class="section-title">Open Positions</h2>
+        <p class="section-subtitle">Join our growing team and help build the future of remittances</p>
+        
+        <div style="display: grid; gap: 2rem; max-width: 900px; margin: 0 auto;">
+          <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-md); border: 1px solid rgba(129, 140, 248, 0.1); transition: transform var(--transition), box-shadow var(--transition);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='var(--shadow-lg)'" onmouseout="this.style.transform=''; this.style.boxShadow='var(--shadow-md)'">
+            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+              <div>
+                <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-dark);">Senior AI Engineer</h3>
+                <p style="color: var(--primary); font-weight: 600;">Engineering • Full-time • Remote</p>
+              </div>
+              <span style="background: rgba(79, 70, 229, 0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 600;">Hot Role</span>
+            </div>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.6;">
+              Lead voice recognition and NLP development. Build AI models that understand natural language commands and convert speech to secure financial transactions.
+            </p>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+              <span style="background: rgba(79, 70, 229, 0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: var(--radius-full); font-size: 0.8rem;">Python</span>
+              <span style="background: rgba(79, 70, 229, 0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: var(--radius-full); font-size: 0.8rem;">TensorFlow</span>
+              <span style="background: rgba(79, 70, 229, 0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: var(--radius-full); font-size: 0.8rem;">Speech Recognition</span>
+              <span style="background: rgba(79, 70, 229, 0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: var(--radius-full); font-size: 0.8rem;">NLP</span>
+            </div>
+            <a href="mailto:careers@remittease.xyz?subject=Senior AI Engineer Application" class="primary-btn" style="font-size: 0.9rem;">Apply Now</a>
+          </div>
+
+          <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-md); border: 1px solid rgba(129, 140, 248, 0.1); transition: transform var(--transition), box-shadow var(--transition);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='var(--shadow-lg)'" onmouseout="this.style.transform=''; this.style.boxShadow='var(--shadow-md)'">
+            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+              <div>
+                <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-dark);">Blockchain Developer</h3>
+                <p style="color: var(--primary); font-weight: 600;">Engineering • Full-time • Remote</p>
+              </div>
+            </div>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.6;">
+              Build and optimize stablecoin infrastructure. Develop smart contracts, integrate with multiple blockchains, and ensure secure, fast cross-border transfers.
+            </p>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+              <span style="background: rgba(79, 70, 229, 0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: var(--radius-full); font-size: 0.8rem;">Solidity</span>
+              <span style="background: rgba(79, 70, 229, 0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: var(--radius-full); font-size: 0.8rem;">Web3.js</span>
+              <span style="background: rgba(79, 70, 229, 0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: var(--radius-full); font-size: 0.8rem;">DeFi</span>
+              <span style="background: rgba(79, 70, 229, 0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: var(--radius-full); font-size: 0.8rem;">Node.js</span>
+            </div>
+            <a href="mailto:careers@remittease.xyz?subject=Blockchain Developer Application" class="primary-btn" style="font-size: 0.9rem;">Apply Now</a>
+          </div>
+
+          <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-md); border: 1px solid rgba(129, 140, 248, 0.1); transition: transform var(--transition), box-shadow var(--transition);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='var(--shadow-lg)'" onmouseout="this.style.transform=''; this.style.boxShadow='var(--shadow-md)'">
+            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+              <div>
+                <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-dark);">Product Designer</h3>
+                <p style="color: var(--primary); font-weight: 600;">Design • Full-time • Remote</p>
+              </div>
+            </div>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.6;">
+              Design intuitive voice-first interfaces. Create seamless user experiences for both mobile and web platforms that make complex financial operations feel effortless.
+            </p>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+              <span style="background: rgba(79, 70, 229, 0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: var(--radius-full); font-size: 0.8rem;">Figma</span>
+              <span style="background: rgba(79, 70, 229, 0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: var(--radius-full); font-size: 0.8rem;">Voice UI/UX</span>
+              <span style="background: rgba(79, 70, 229, 0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: var(--radius-full); font-size: 0.8rem;">Mobile Design</span>
+              <span style="background: rgba(79, 70, 229, 0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: var(--radius-full); font-size: 0.8rem;">Prototyping</span>
+            </div>
+            <a href="mailto:careers@remittease.xyz?subject=Product Designer Application" class="primary-btn" style="font-size: 0.9rem;">Apply Now</a>
+          </div>
+
+          <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-md); border: 1px solid rgba(129, 140, 248, 0.1); transition: transform var(--transition), box-shadow var(--transition);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='var(--shadow-lg)'" onmouseout="this.style.transform=''; this.style.boxShadow='var(--shadow-md)'">
+            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+              <div>
+                <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-dark);">Growth Marketing Manager</h3>
+                <p style="color: var(--primary); font-weight: 600;">Marketing • Full-time • Remote/Cape Town</p>
+              </div>
+            </div>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.6;">
+              Drive user acquisition and retention. Build marketing strategies for emerging markets, manage community growth, and establish thought leadership in fintech.
+            </p>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+              <span style="background: rgba(79, 70, 229, 0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: var(--radius-full); font-size: 0.8rem;">Digital Marketing</span>
+              <span style="background: rgba(79, 70, 229, 0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: var(--radius-full); font-size: 0.8rem;">Community Building</span>
+              <span style="background: rgba(79, 70, 229, 0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: var(--radius-full); font-size: 0.8rem;">Analytics</span>
+              <span style="background: rgba(79, 70, 229, 0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: var(--radius-full); font-size: 0.8rem;">Content Creation</span>
+            </div>
+            <a href="mailto:careers@remittease.xyz?subject=Growth Marketing Manager Application" class="primary-btn" style="font-size: 0.9rem;">Apply Now</a>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+          <p style="color: var(--text-muted); margin-bottom: 1rem;">Don't see a perfect fit?</p>
+          <a href="mailto:careers@remittease.xyz?subject=General Application" class="secondary-btn">
+            <i class="fas fa-paper-plane"></i> Send Us Your Resume
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Application Process -->
+    <section class="section" style="background: linear-gradient(to right, rgba(79, 70, 229, 0.05), rgba(236, 72, 153, 0.05));">
+      <div class="container">
+        <h2 class="section-title">Application Process</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 800px; margin: 0 auto;">
+          <div style="text-align: center;">
+            <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--secondary)); margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">
+              1
+            </div>
+            <h3 style="font-weight: 700; margin-bottom: 0.5rem; color: var(--text-dark);">Apply</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Submit your resume and cover letter. Tell us why you're excited about voice-activated finance.</p>
+          </div>
+          <div style="text-align: center;">
+            <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, var(--secondary), var(--tertiary)); margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">
+              2
+            </div>
+            <h3 style="font-weight: 700; margin-bottom: 0.5rem; color: var(--text-dark);">Screen</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">30-minute call with our team to discuss your background and mutual fit.</p>
+          </div>
+          <div style="text-align: center;">
+            <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, var(--tertiary), var(--primary)); margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">
+              3
+            </div>
+            <h3 style="font-weight: 700; margin-bottom: 0.5rem; color: var(--text-dark);">Skills Assessment</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Technical or design challenge relevant to the role. Take-home project or live collaboration.</p>
+          </div>
+          <div style="text-align: center;">
+            <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--secondary)); margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">
+              4
+            </div>
+            <h3 style="font-weight: 700; margin-bottom: 0.5rem; color: var(--text-dark);">Final Interview</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Meet the founders and potential teammates. Culture fit and vision alignment discussion.</p>
+          </div>
+        </div>
+        
+        <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-md); border: 1px solid rgba(129, 140, 248, 0.1); margin-top: 3rem; text-align: center;">
+          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-dark);">We Value</h3>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+            <div>
+              <i class="fas fa-rocket" style="color: var(--primary); margin-bottom: 0.5rem;"></i>
+              <p style="color: var(--text-muted); font-size: 0.9rem;">Startup experience</p>
+            </div>
+            <div>
+              <i class="fas fa-globe" style="color: var(--primary); margin-bottom: 0.5rem;"></i>
+              <p style="color: var(--text-muted); font-size: 0.9rem;">Global perspective</p>
+            </div>
+            <div>
+              <i class="fas fa-lightbulb" style="color: var(--primary); margin-bottom: 0.5rem;"></i>
+              <p style="color: var(--text-muted); font-size: 0.9rem;">Creative problem solving</p>
+            </div>
+            <div>
+              <i class="fas fa-handshake" style="color: var(--primary); margin-bottom: 0.5rem;"></i>
+              <p style="color: var(--text-muted); font-size: 0.9rem;">Collaborative mindset</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Life at RemittEase -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Life at RemittEase</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+          <div>
+            <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--text-dark);">
+              Building Together, Globally
+            </h3>
+            <div style="space-y: 1.5rem;">
+              <div style="margin-bottom: 1.5rem;">
+                <h4 style="font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem;">Remote-First Culture</h4>
+                <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Team members across 5 countries working in their optimal time zones with quarterly in-person meetups.</p>
+              </div>
+              <div style="margin-bottom: 1.5rem;">
+                <h4 style="font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem;">Innovation Time</h4>
+                <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">20% time for personal projects, research, and exploring new technologies that could benefit our platform.</p>
+              </div>
+              <div style="margin-bottom: 1.5rem;">
+                <h4 style="font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem;">Open Source</h4>
+                <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Contribute to open source projects and share learnings with the broader developer community.</p>
+              </div>
+              <div>
+                <h4 style="font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem;">Fast Feedback</h4>
+                <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Rapid iteration cycles, weekly demos, and direct access to user feedback and metrics.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-md); border: 1px solid rgba(129, 140, 248, 0.1);">
+            <h4 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--text-dark);">Team Testimonial</h4>
+            <blockquote style="font-style: italic; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.5rem;">
+              "Working at RemittEase feels like being at the forefront of a financial revolution. Every day I'm building technology that directly helps families stay connected across borders. The team's passion for solving real-world problems with cutting-edge AI and blockchain is infectious."
+            </blockquote>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+              <div style="width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--secondary)); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">
+                S
+              </div>
+              <div>
+                <h5 style="font-weight: 600; color: var(--text-dark);">Sarah Chen</h5>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Senior Frontend Engineer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" style="background: linear-gradient(to right, rgba(79, 70, 229, 0.05), rgba(236, 72, 153, 0.05));">
+      <div class="container">
+        <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+          <h2 class="section-title">Ready to Join Us?</h2>
+          <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.7;">
+            Help us build the future where sending money is as simple as saying "Send $100 to mom". Apply today or reach out with questions.
+          </p>
+          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="#positions" class="primary-btn">
+              <i class="fas fa-arrow-up"></i> View Open Roles
+            </a>
+            <a href="mailto:careers@remittease.xyz" class="secondary-btn">
+              <i class="fas fa-envelope"></i> careers@remittease.xyz
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-column">
+        <div class="footer-logo">RemittEase</div>
+        <p class="footer-description">Making global remittances fast, affordable, and accessible with AI and blockchain technology.</p>
+        <div class="social-links">
+          <a href="https://x.com/remitt_ease" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="https://discord.gg/ewmuwbZFgS" class="social-link"><i class="fab fa-discord"></i></a>
+          <a href="https://medium.com/@RemittEase" class="social-link"><i class="fab fa-medium"></i></a>
+          <a href="https://open.spotify.com/show/5Gx98emQG99UwMSsF9hoR4" class="social-link"><i class="fab fa-spotify"></i></a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h4>Company</h4>
+        <div class="footer-links">
+          <a href="about.html" class="footer-link">About Us</a>
+          <a href="careers.html" class="footer-link">Careers</a>
+          <a href="#" class="footer-link">Blog</a>
+          <a href="#" class="footer-link">Press</a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h4>Product</h4>
+        <div class="footer-links">
+          <a href="#" class="footer-link">Features</a>
+          <a href="security.html" class="footer-link">Security</a>
+          <a href="token.html" class="footer-link">Token</a>
+          <a href="#" class="footer-link">Roadmap</a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h4>Support</h4>
+        <div class="footer-links">
+          <a href="#" class="footer-link">Help Center</a>
+          <a href="contact.html" class="footer-link">Contact Us</a>
+          <a href="#" class="footer-link">Status</a>
+          <a href="#" class="footer-link">API Docs</a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; 2025 RemittEase. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script>
+    const themeToggle = document.getElementById('themeToggle');
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const backdrop = document.getElementById('backdrop');
+    const backToTop = document.getElementById('backToTop');
+
+    themeToggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark-mode');
+      themeToggle.innerHTML = document.documentElement.classList.contains('dark-mode') 
+        ? '<i class="fas fa-sun"></i>' 
+        : '<i class="fas fa-moon"></i>';
+    });
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+      backdrop.classList.toggle('active');
+      mobileMenuBtn.innerHTML = mobileMenu.classList.contains('active') 
+        ? '<i class="fas fa-times"></i>' 
+        : '<i class="fas fa-bars"></i>';
+    });
+
+    backdrop.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+      backdrop.classList.remove('active');
+      mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+    });
+
+    document.querySelectorAll('.mobile-menu .nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        backdrop.classList.remove('active');
+        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+      });
+    });
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) {
+        backToTop.classList.add('active');
+      } else {
+        backToTop.classList.remove('active');
+      }
+    });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+</body>
+</html>

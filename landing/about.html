@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#4f46e5">
+  <title>About Us – RemittEase</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <a href="index.html" class="logo">
+      <img src="RE icon.png" alt="RemittEase" style="width: 32px; height: 32px; border-radius: 50%;">
+      RemittEase
+    </a>
+    <nav class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="#" class="nav-link">Security</a>
+      <a href="#" class="nav-link">Token</a>
+      <a href="#" class="nav-link">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode">
+        <i class="fas fa-moon"></i>
+      </button>
+      <a href="https://app.remittease.xyz" class="cta-button">Try Now</a>
+    </div>
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+      <i class="fas fa-bars"></i>
+    </button>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="#" class="nav-link">Security</a>
+    <a href="#" class="nav-link">Token</a>
+    <a href="#" class="nav-link">Contact</a>
+  </div>
+  <div class="backdrop" id="backdrop"></div>
+
+  <!-- Main -->
+  <main id="main" style="margin-top: 80px;">
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: 70vh;">
+      <div class="blob-container">
+        <svg class="blob-svg" viewBox="0 0 500 500" aria-hidden="true">
+          <defs>
+            <linearGradient id="blobGradient" gradientTransform="rotate(45)">
+              <stop offset="0%" stop-color="rgba(79, 70, 229, 0.4)"/>
+              <stop offset="100%" stop-color="rgba(236, 72, 153, 0.4)"/>
+            </linearGradient>
+          </defs>
+          <path fill="url(#blobGradient)" d="M421.5,304Q389,358,334.5,393.5Q280,429,225,397.5Q170,366,121,321Q72,276,88.5,210Q105,144,162,108Q219,72,278,84.5Q337,97,377.5,142Q418,187,421.5,304Z"/>
+        </svg>
+      </div>
+
+      <div class="container" style="display: flex; align-items: center; justify-content: center; text-align: center;">
+        <div style="max-width: 800px; position: relative; z-index: 10;">
+          <h1 style="font-size: 3.5rem; font-weight: 800; margin-bottom: 1.5rem; background: linear-gradient(to right, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+            Reimagining Global Remittances
+          </h1>
+          <p style="font-size: 1.25rem; color: var(--text-muted); margin-bottom: 2rem;">
+            We're building the future where sending money is as simple as saying "Send $100 to mom" - powered by AI and stablecoins.
+          </p>
+          <div class="feature-badges" style="justify-content: center; margin-bottom: 0;">
+            <div class="badge ai-badge"><i class="fas fa-microphone"></i> Voice-First</div>
+            <div class="badge ai-badge"><i class="fas fa-robot"></i> AI-Powered</div>
+            <div class="badge ai-badge"><i class="fas fa-coins"></i> Stablecoin Native</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="section">
+      <div class="container">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+          <h2 class="section-title">Our Mission</h2>
+          <p style="font-size: 1.2rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 3rem;">
+            Traditional remittances are broken. Families pay 6-15% in fees, wait days for transfers, and navigate complex forms. We believe sending money should be as natural as having a conversation.
+          </p>
+          <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 3rem; box-shadow: var(--shadow-lg); border: 1px solid rgba(129, 140, 248, 0.1);">
+            <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--text-dark);">
+              "Send $100 to mom"
+            </h3>
+            <p style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.7;">
+              Four simple words that represent our vision. No apps to open, no forms to fill, no accounts to remember. Just speak naturally, and our AI handles the complexity of stablecoin conversion, blockchain routing, and compliance - delivering money instantly and affordably.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="section" style="background: linear-gradient(to right, rgba(79, 70, 229, 0.05), rgba(236, 72, 153, 0.05));">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+          <div>
+            <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 1.5rem; background: linear-gradient(to right, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+              Our Story
+            </h2>
+            <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 1.5rem;">
+              RemittEase was born from a simple frustration: why does sending money to family require so much complexity? Our founders, immigrants themselves, experienced firsthand the pain of expensive, slow traditional remittances.
+            </p>
+            <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 1.5rem;">
+              We envisioned a world where technology serves humanity, not complicates it. Where AI understands context, stablecoins provide stability, and blockchain enables instant global transfers - all invisible to the user.
+            </p>
+            <p style="color: var(--text-muted); line-height: 1.7;">
+              Today, we're making that vision reality. Every voice command processed, every stablecoin converted, every family connected - brings us closer to our goal of making global financial inclusion effortless.
+            </p>
+          </div>
+          <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-md); border: 1px solid rgba(129, 140, 248, 0.1);">
+            <div style="text-align: center; margin-bottom: 2rem;">
+              <div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(to right, var(--primary), var(--secondary)); margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center;">
+                <i class="fas fa-lightbulb" style="font-size: 2rem; color: white;"></i>
+              </div>
+              <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-dark);">The Spark</h3>
+            </div>
+            <p style="color: var(--text-muted); line-height: 1.6; text-align: center; font-style: italic;">
+              "What if sending money was as easy as asking Alexa to play music? What if blockchain and AI worked together to make remittances invisible?"
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Our Values</h2>
+        <p class="section-subtitle">The principles that guide everything we build</p>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-heart"></i>
+            </div>
+            <h3 class="feature-title">Human-First Technology</h3>
+            <p class="feature-description">Technology should adapt to humans, not the other way around. We build with empathy, designing for real families with real needs.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3 class="feature-title">Security & Trust</h3>
+            <p class="feature-description">Your money, your voice, your privacy - protected with military-grade security and transparent, auditable blockchain technology.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-globe"></i>
+            </div>
+            <h3 class="feature-title">Financial Inclusion</h3>
+            <p class="feature-description">Breaking down barriers to global financial access. Every person deserves fast, affordable ways to support their loved ones.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <h3 class="feature-title">Innovation</h3>
+            <p class="feature-description">Constantly pushing boundaries with AI, blockchain, and voice technology to create experiences that feel like magic.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3 class="feature-title">Community</h3>
+            <p class="feature-description">Building with our users, for our users. Every feature is shaped by real feedback from real families sending real money.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <h3 class="feature-title">Sustainability</h3>
+            <p class="feature-description">Using energy-efficient blockchains and sustainable practices to ensure our impact on the planet is positive.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="section" style="background: linear-gradient(to right, rgba(79, 70, 229, 0.05), rgba(236, 72, 153, 0.05));">
+      <div class="container">
+        <h2 class="section-title">Meet Our Team</h2>
+        <p class="section-subtitle">Passionate builders from fintech, AI, and blockchain</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 720px; margin: 0 auto;">
+          <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 2rem; text-align: center; box-shadow: var(--shadow-md); border: 1px solid rgba(129, 140, 248, 0.1); transition: transform var(--transition), box-shadow var(--transition);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='var(--shadow-lg)'" onmouseout="this.style.transform=''; this.style.boxShadow='var(--shadow-md)'">
+            <div style="width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--secondary)); margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 700;">
+              NN
+            </div>
+            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-dark);">Nyoni Noble</h3>
+            <p style="color: var(--primary); font-weight: 600; margin-bottom: 1rem;">Founder & CEO</p>
+            <p style="color: var(--text-muted); line-height: 1.6; font-size: 0.9rem;">Nearly 10 years in finance with startup founding experience. Web3 developer backed by Google and SAB.</p>
+          </div>
+          <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 2rem; text-align: center; box-shadow: var(--shadow-md); border: 1px solid rgba(129, 140, 248, 0.1); transition: transform var(--transition), box-shadow var(--transition);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='var(--shadow-lg)'" onmouseout="this.style.transform=''; this.style.boxShadow='var(--shadow-md)'">
+            <div style="width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, var(--secondary), var(--primary)); margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 700;">
+              AR
+            </div>
+            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-dark);">Arigundia Ryan</h3>
+            <p style="color: var(--primary); font-weight: 600; margin-bottom: 1rem;">Co-Founder & COO</p>
+            <p style="color: var(--text-muted); line-height: 1.6; font-size: 0.9rem;">7 years as Web3 analyst with honours degree in accounting. Expert in developer relations and marketing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">By the Numbers</h2>
+        <div class="network-grid">
+          <div class="network-stat-card">
+            <div class="stat-icon">
+              <i class="fas fa-microphone"></i>
+            </div>
+            <div class="stat-value">1M+</div>
+            <div class="stat-label">Voice Commands Processed</div>
+          </div>
+          <div class="network-stat-card">
+            <div class="stat-icon">
+              <i class="fas fa-coins"></i>
+            </div>
+            <div class="stat-value">$50M+</div>
+            <div class="stat-label">Stablecoin Volume</div>
+          </div>
+          <div class="network-stat-card">
+            <div class="stat-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="stat-value">8.5s</div>
+            <div class="stat-label">Average Transfer Time</div>
+          </div>
+          <div class="network-stat-card">
+            <div class="stat-icon">
+              <i class="fas fa-heart"></i>
+            </div>
+            <div class="stat-value">98%</div>
+            <div class="stat-label">Customer Satisfaction</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Join Us Section -->
+    <section class="section" style="background: linear-gradient(to right, rgba(79, 70, 229, 0.05), rgba(236, 72, 153, 0.05));">
+      <div class="container">
+        <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+          <h2 class="section-title">Join Our Mission</h2>
+          <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.7;">
+            We're always looking for passionate people who want to revolutionize global finance. Whether you're an engineer, designer, or advocate for financial inclusion - let's build the future together.
+          </p>
+          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="#" class="primary-btn">
+              <i class="fas fa-briefcase"></i> View Careers
+            </a>
+            <a href="#" class="secondary-btn">
+              <i class="fas fa-envelope"></i> Contact Us
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-column">
+        <div class="footer-logo">RemittEase</div>
+        <p class="footer-description">Making global remittances fast, affordable, and accessible with AI and blockchain technology.</p>
+        <div class="social-links">
+          <a href="https://x.com/remitt_ease" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="https://discord.gg/ewmuwbZFgS" class="social-link"><i class="fab fa-discord"></i></a>
+          <a href="https://medium.com/@RemittEase" class="social-link"><i class="fab fa-medium"></i></a>
+          <a href="https://open.spotify.com/show/5Gx98emQG99UwMSsF9hoR4" class="social-link"><i class="fab fa-spotify"></i></a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h4>Company</h4>
+        <div class="footer-links">
+          <a href="about.html" class="footer-link">About Us</a>
+          <a href="#" class="footer-link">Careers</a>
+          <a href="#" class="footer-link">Blog</a>
+          <a href="#" class="footer-link">Press</a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h4>Product</h4>
+        <div class="footer-links">
+          <a href="#" class="footer-link">Features</a>
+          <a href="#" class="footer-link">Security</a>
+          <a href="#" class="footer-link">Token</a>
+          <a href="#" class="footer-link">Roadmap</a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h4>Support</h4>
+        <div class="footer-links">
+          <a href="#" class="footer-link">Help Center</a>
+          <a href="#" class="footer-link">Contact Us</a>
+          <a href="#" class="footer-link">Status</a>
+          <a href="#" class="footer-link">API Docs</a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; 2025 RemittEase. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script>
+    // Theme Toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const backdrop = document.getElementById('backdrop');
+    const backToTop = document.getElementById('backToTop');
+
+    themeToggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark-mode');
+      themeToggle.innerHTML = document.documentElement.classList.contains('dark-mode') 
+        ? '<i class="fas fa-sun"></i>' 
+        : '<i class="fas fa-moon"></i>';
+    });
+
+    // Mobile Menu
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+      backdrop.classList.toggle('active');
+      mobileMenuBtn.innerHTML = mobileMenu.classList.contains('active') 
+        ? '<i class="fas fa-times"></i>' 
+        : '<i class="fas fa-bars"></i>';
+    });
+
+    backdrop.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+      backdrop.classList.remove('active');
+      mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+    });
+
+    // Mobile Menu Links
+    document.querySelectorAll('.mobile-menu .nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        backdrop.classList.remove('active');
+        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+      });
+    });
+
+    // Back to Top
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) {
+        backToTop.classList.add('active');
+      } else {
+        backToTop.classList.remove('active');
+      }
+    });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+</body>
+</html>
