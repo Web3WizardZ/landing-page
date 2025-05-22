@@ -96,8 +96,8 @@ export default function EnhancedMoneyTransferPage() {
           </div>
         </div>
         <div className="flex items-center space-x-3">
-          <FiBell size={24} className="text-gray-700" />
-          <FiSettings size={24} className="text-gray-700" />
+          <FiBell size={16} className="text-gray-700" />
+          <FiSettings size={16} className="text-gray-700" />
           <select
             value={language}
             onChange={e => setLanguage(e.target.value as 'en'|'zu')}
