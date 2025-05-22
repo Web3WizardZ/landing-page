@@ -88,7 +88,7 @@ export default function EnhancedMoneyTransferPage() {
           <img src="https://i.pravatar.cc/150?u=User" alt="User"
                className="w-12 h-12 rounded-full ring-2 ring-indigo-400" />
           <div>
-            <h1 className="text-xl font-bold text-gray-900">{greet}, Noble</h1>
+            <h1 className="text-sm font-bold text-gray-900">{greet}, Noble</h1>
             <p className="text-sm text-gray-700">
               <FiClock size={16} className="inline mr-1 align-middle" />
               {formattedTime}
