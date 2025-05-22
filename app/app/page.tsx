@@ -88,34 +88,34 @@ export default function EnhancedMoneyTransferPage() {
           <img src="https://i.pravatar.cc/150?u=User" alt="User"
                className="w-12 h-12 rounded-full ring-2 ring-indigo-400" />
           <div>
-            <h1 className="text-xl font-bold">{greet}, Noble</h1>
-            <p className="text-sm text-gray-600">
+            <h1 className="text-xl font-bold text-gray-900">{greet}, Noble</h1>
+            <p className="text-sm text-gray-700">
               <FiClock size={16} className="inline mr-1 align-middle" />
               {formattedTime}
             </p>
           </div>
         </div>
         <div className="flex items-center space-x-3">
-          <FiBell size={24} className="text-gray-600" />
-          <FiSettings size={24} className="text-gray-600" />
+          <FiBell size={24} className="text-gray-700" />
+          <FiSettings size={24} className="text-gray-700" />
           <select
             value={language}
             onChange={e => setLanguage(e.target.value as 'en'|'zu')}
-            className="border p-1 rounded text-sm"
+            className="border p-1 rounded text-sm text-gray-900"
           >
             <option value="en">EN</option>
             <option value="zu">ZU</option>
           </select>
           <div className="flex items-center space-x-1 bg-yellow-100 px-2 py-1 rounded-full">
             <FiStar size={16} className="text-yellow-500" />
-            <span className="text-sm font-medium">{points}</span>
+            <span className="text-sm font-medium text-gray-900">{points}</span>
           </div>
         </div>
       </div>
 
       {/* Balance Card */}
       <div ref={balanceRef} className="relative bg-white p-5 rounded-2xl shadow-md max-w-xl mx-auto mb-6">
-        <p className="text-sm text-gray-500">Wallet Balance</p>
+        <p className="text-sm text-gray-600">Wallet Balance</p>
         <div className="flex items-baseline space-x-2 mt-2">
           {loading
             ? <div className="h-10 w-40 bg-gray-300 rounded animate-pulse"/>
@@ -130,19 +130,19 @@ export default function EnhancedMoneyTransferPage() {
         </div>
         <Sparkline data={sparkData} />
         <div className="mt-4 flex items-center space-x-2">
-          <label htmlFor="currency" className="text-xs text-gray-600">Convert to</label>
+          <label htmlFor="currency" className="text-xs text-gray-700">Convert to</label>
           <select
             id="currency"
             value={currency}
             onChange={e => setCurrency(e.target.value as keyof typeof rates)}
-            className="text-xs p-1 border rounded"
+            className="text-xs p-1 border rounded text-gray-900"
           >
             {Object.keys(rates).map(cur => (
               <option key={cur} value={cur}>{cur}</option>
             ))}
           </select>
           {!loading && (
-            <span className="text-xs text-gray-800">
+            <span className="text-xs text-gray-900">
               {currency} {convertedValue}
             </span>
           )}
@@ -151,7 +151,7 @@ export default function EnhancedMoneyTransferPage() {
 
       {/* Quick Send */}
       <div ref={quickRef} className="bg-white p-5 rounded-2xl shadow-md max-w-xl mx-auto mb-6">
-        <h2 className="text-sm font-medium mb-4">Quick Send</h2>
+        <h2 className="text-sm font-medium mb-4 text-gray-900">Quick Send</h2>
         <div className="flex space-x-4 overflow-x-auto">
           {contacts.map(name => (
             <motion.div
@@ -166,7 +166,7 @@ export default function EnhancedMoneyTransferPage() {
                 alt={name}
                 className="w-12 h-12 rounded-full mx-auto shadow"
               />
-              <p className="mt-1 text-xs text-gray-700">{name}</p>
+              <p className="mt-1 text-xs text-gray-900">{name}</p>
             </motion.div>
           ))}
           <motion.button
@@ -175,7 +175,7 @@ export default function EnhancedMoneyTransferPage() {
             whileTap={{ scale: 0.9 }}
             transition={{ type: 'spring', stiffness: 300, damping: 20 }}
           >
-            <FiPlus size={20} />
+            <FiPlus size={20} className="text-gray-900" />
           </motion.button>
         </div>
       </div>
@@ -200,11 +200,11 @@ export default function EnhancedMoneyTransferPage() {
       {/* Transactions */}
       <div className="bg-white p-5 rounded-2xl shadow-md max-w-xl mx-auto mb-6">
         <div className="flex items-center mb-3">
-          <FiSearch size={20} className="text-gray-500 mr-2" />
+          <FiSearch size={20} className="text-gray-600 mr-2" />
           <input
             type="text"
             placeholder="Search transactions"
-            className="w-full text-sm bg-transparent focus:outline-none text-gray-800 placeholder-gray-500"
+            className="w-full text-sm bg-transparent focus:outline-none text-gray-900 placeholder-gray-600"
           />
         </div>
         <div className="space-y-2">
@@ -218,8 +218,8 @@ export default function EnhancedMoneyTransferPage() {
                   {tx.to.charAt(0)}
                 </span>
                 <div>
-                  <p className="font-medium text-gray-800">{tx.to}</p>
-                  <p className="text-xs text-gray-500">{tx.date}</p>
+                  <p className="font-medium text-gray-900">{tx.to}</p>
+                  <p className="text-xs text-gray-600">{tx.date}</p>
                 </div>
               </div>
               <p className={`font-semibold ${tx.amount.startsWith('+') ? 'text-green-500' : 'text-red-500'}`}>
@@ -235,10 +235,10 @@ export default function EnhancedMoneyTransferPage() {
         {[FiHome,FiClock,FiSettings].map((Icon,i) => (
           <button
             key={i}
-            className="flex flex-col items-center text-gray-600 hover:text-indigo-500"
+            className="flex flex-col items-center text-gray-700 hover:text-indigo-500"
           >
             <Icon size={20} />
-            <span className="text-xs mt-1">{['Home','Activity','Settings'][i]}</span>
+            <span className="text-xs mt-1 text-gray-900">{['Home','Activity','Settings'][i]}</span>
           </button>
         ))}
       </nav>
