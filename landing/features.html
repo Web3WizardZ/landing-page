@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#4f46e5">
+  <title>Features – RemittEase</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <a href="index.html" class="logo">
+      <img src="RE icon.png" alt="RemittEase" style="width: 32px; height: 32px; border-radius: 50%;">
+      RemittEase
+    </a>
+    <nav class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="features.html" class="nav-link">Features</a>
+      <a href="security.html" class="nav-link">Security</a>
+      <a href="token.html" class="nav-link">Token</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode">
+        <i class="fas fa-moon"></i>
+      </button>
+      <a href="https://app.remittease.xyz" class="cta-button">Try Now</a>
+    </div>
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+      <i class="fas fa-bars"></i>
+    </button>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="features.html" class="nav-link">Features</a>
+    <a href="security.html" class="nav-link">Security</a>
+    <a href="token.html" class="nav-link">Token</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </div>
+  <div class="backdrop" id="backdrop"></div>
+
+  <!-- Main -->
+  <main id="main" style="margin-top: 80px;">
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: 70vh;">
+      <div class="blob-container">
+        <svg class="blob-svg" viewBox="0 0 500 500" aria-hidden="true">
+          <defs>
+            <linearGradient id="blobGradient" gradientTransform="rotate(45)">
+              <stop offset="0%" stop-color="rgba(79, 70, 229, 0.4)"/>
+              <stop offset="100%" stop-color="rgba(236, 72, 153, 0.4)"/>
+            </linearGradient>
+          </defs>
+          <path fill="url(#blobGradient)" d="M421.5,304Q389,358,334.5,393.5Q280,429,225,397.5Q170,366,121,321Q72,276,88.5,210Q105,144,162,108Q219,72,278,84.5Q337,97,377.5,142Q418,187,421.5,304Z"/>
+        </svg>
+      </div>
+
+      <div class="container" style="display: flex; align-items: center; justify-content: center; text-align: center;">
+        <div style="max-width: 800px; position: relative; z-index: 10;">
+          <h1 style="font-size: 3.5rem; font-weight: 800; margin-bottom: 1.5rem; background: linear-gradient(to right, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+            Revolutionary Features
+          </h1>
+          <p style="font-size: 1.25rem; color: var(--text-muted); margin-bottom: 2rem;">
+            Experience the future of remittances with voice AI, stablecoins, and blockchain technology working seamlessly together.
+          </p>
+          <div class="feature-badges" style="justify-content: center; margin-bottom: 2rem;">
+            <div class="badge ai-badge"><i class="fas fa-microphone"></i> Voice Commands</div>
+            <div class="badge"><i class="fas fa-coins"></i> Stablecoin Powered</div>
+            <div class="badge"><i class="fas fa-bolt"></i> Instant Transfers</div>
+            <div class="badge"><i class="fas fa-percentage"></i> 0.5% Fees</div>
+          </div>
+          <a href="#voice-features" class="primary-btn">
+            <i class="fas fa-play"></i> Explore Features
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Voice Features -->
+    <section id="voice-features" class="section">
+      <div class="container">
+        <h2 class="section-title">Voice-First Experience</h2>
+        <p class="section-subtitle">Simply speak to send money anywhere in the world</p>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-bottom: 4rem;">
+          <div>
+            <h3 style="font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--text-dark);">
+              "Send $100 to mom"
+            </h3>
+            <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 1.5rem;">
+              Our AI understands natural language commands and processes them instantly. No forms, no navigation, no complexity - just speak and send.
+            </p>
+            <div style="space-y: 1rem;">
+              <div style="margin-bottom: 1rem;">
+                <h4 style="font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem;">Natural Language Processing</h4>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Understands context, nicknames, and casual speech patterns</p>
+              </div>
+              <div style="margin-bottom: 1rem;">
+                <h4 style="font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem;">Multi-Language Support</h4>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Supports 20+ languages with regional dialects</p>
+              </div>
+              <div>
+                <h4 style="font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem;">Voice Biometric Security</h4>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">99.999% accuracy with anti-spoofing technology</p>
+              </div>
+            </div>
+          </div>
+          
+          <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-md); border: 1px solid rgba(129, 140, 248, 0.1);">
+            <h4 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--text-dark);">Voice Command Examples</h4>
+            <div style="space-y: 1rem;">
+              <div style="background: rgba(79, 70, 229, 0.05); padding: 1rem; border-radius: var(--radius-md); margin-bottom: 1rem;">
+                <p style="color: var(--primary); font-weight: 600; margin-bottom: 0.5rem;">"Send $500 to John in Kenya"</p>
+                <p style="color: var(--text-muted); font-size: 0.8rem;">→ Converts to KES, finds recipient</p>
+              </div>
+              <div style="background: rgba(236, 72, 153, 0.05); padding: 1rem; border-radius: var(--radius-md); margin-bottom: 1rem;">
+                <p style="color: var(--secondary); font-weight: 600; margin-bottom: 0.5rem;">"Transfer 100 euros to my sister"</p>
+                <p style="color: var(--text-muted); font-size: 0.8rem;">→ Uses contact list, auto-converts</p>
+              </div>
+              <div style="background: rgba(16, 185, 129, 0.05); padding: 1rem; border-radius: var(--radius-md);">
+                <p style="color: var(--tertiary); font-weight: 600; margin-bottom: 0.5rem;">"What's the USD to ZAR rate?"</p>
+                <p style="color: var(--text-muted); font-size: 0.8rem;">→ Real-time exchange rate info</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stablecoin Features -->
+    <section class="section" style="background: linear-gradient(to right, rgba(79, 70, 229, 0.05), rgba(236, 72, 153, 0.05));">
+      <div class="container">
+        <h2 class="section-title">Stablecoin-Powered Infrastructure</h2>
+        <div class="features-grid">
+          <div class="feature-card ai-highlight">
+            <div class="feature-icon">
+              <i class="fas fa-coins"></i>
+            </div>
+            <h3 class="feature-title">Multi-Stablecoin Support</h3>
+            <p class="feature-description">USDC, USDT, and DAI integration for optimal liquidity and stability. Auto-selection of best rates.</p>
+          </div>
+          <div class="feature-card ai-highlight">
+            <div class="feature-icon">
+              <i class="fas fa-exchange-alt"></i>
+            </div>
+            <h3 class="feature-title">Instant Conversion</h3>
+            <p class="feature-description">Real-time conversion between fiat and stablecoins with transparent, competitive exchange rates.</p>
+          </div>
+          <div class="feature-card ai-highlight">
+            <div class="feature-icon">
+              <i class="fas fa-shield-check"></i>
+            </div>
+            <h3 class="feature-title">Audited Reserves</h3>
+            <p class="feature-description">Only use stablecoins with verified 1:1 backing and regular third-party attestations.</p>
+          </div>
+          <div class="feature-card ai-highlight">
+            <div class="feature-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3 class="feature-title">DeFi Integration</h3>
+            <p class="feature-description">Earn yield on idle balances through secure DeFi protocols while maintaining instant liquidity.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Speed & Cost -->
+    <section class="section">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+          <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 3rem; box-shadow: var(--shadow-lg); border: 1px solid rgba(129, 140, 248, 0.1);">
+            <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 2rem; color: var(--text-dark); text-align: center;">Speed Comparison</h3>
+            <div style="space-y: 1.5rem;">
+              <div style="margin-bottom: 1.5rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                  <span style="color: var(--text-dark); font-weight: 600;">RemittEase</span>
+                  <span style="color: var(--tertiary); font-weight: 700;">8 seconds</span>
+                </div>
+                <div style="background: rgba(16, 185, 129, 0.1); height: 8px; border-radius: 4px; overflow: hidden;">
+                  <div style="background: var(--tertiary); height: 100%; width: 100%; border-radius: 4px;"></div>
+                </div>
+              </div>
+              <div style="margin-bottom: 1.5rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                  <span style="color: var(--text-dark); font-weight: 600;">Traditional Banks</span>
+                  <span style="color: var(--text-muted); font-weight: 700;">3-5 days</span>
+                </div>
+                <div style="background: rgba(100, 116, 139, 0.1); height: 8px; border-radius: 4px; overflow: hidden;">
+                  <div style="background: var(--text-muted); height: 100%; width: 20%; border-radius: 4px;"></div>
+                </div>
+              </div>
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                  <span style="color: var(--text-dark); font-weight: 600;">Money Transfer</span>
+                  <span style="color: var(--text-muted); font-weight: 700;">1-2 hours</span>
+                </div>
+                <div style="background: rgba(100, 116, 139, 0.1); height: 8px; border-radius: 4px; overflow: hidden;">
+                  <div style="background: var(--text-muted); height: 100%; width: 60%; border-radius: 4px;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div>
+            <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 1.5rem; background: linear-gradient(to right, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+              Lightning Fast & Affordable
+            </h2>
+            <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 2rem;">
+              Blockchain infrastructure enables instant settlement while our efficient stablecoin routing keeps fees at just 0.5% - up to 90% savings compared to traditional methods.
+            </p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+              <div style="text-align: center;">
+                <div style="font-size: 2.5rem; font-weight: 800; color: var(--tertiary); margin-bottom: 0.5rem;">8s</div>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Average Transfer Time</p>
+              </div>
+              <div style="text-align: center;">
+                <div style="font-size: 2.5rem; font-weight: 800; color: var(--secondary); margin-bottom: 0.5rem;">0.5%</div>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Transfer Fee</p>
+              </div>
+              <div style="text-align: center;">
+                <div style="font-size: 2.5rem; font-weight: 800; color: var(--primary); margin-bottom: 0.5rem;">24/7</div>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Always Available</p>
+              </div>
+              <div style="text-align: center;">
+                <div style="font-size: 2.5rem; font-weight: 800; color: var(--tertiary); margin-bottom: 0.5rem;">50+</div>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Countries</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Platform Features -->
+    <section class="section" style="background: linear-gradient(to right, rgba(79, 70, 229, 0.05), rgba(236, 72, 153, 0.05));">
+      <div class="container">
+        <h2 class="section-title">Multi-Platform Experience</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+          <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-md); border: 1px solid rgba(129, 140, 248, 0.1); text-align: center;">
+            <i class="fas fa-mobile-alt" style="font-size: 3rem; color: var(--primary); margin-bottom: 1rem;"></i>
+            <h3 style="font-weight: 700; margin-bottom: 1rem; color: var(--text-dark);">Mobile App</h3>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Native iOS and Android apps with offline voice recognition and biometric security.</p>
+            <ul style="list-style: none; color: var(--text-muted); font-size: 0.9rem; text-align: left;">
+              <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--tertiary); margin-right: 0.5rem;"></i>Offline voice processing</li>
+              <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--tertiary); margin-right: 0.5rem;"></i>Touch ID / Face ID</li>
+              <li><i class="fas fa-check" style="color: var(--tertiary); margin-right: 0.5rem;"></i>Push notifications</li>
+            </ul>
+          </div>
+          
+          <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-md); border: 1px solid rgba(129, 140, 248, 0.1); text-align: center;">
+            <i class="fas fa-globe" style="font-size: 3rem; color: var(--primary); margin-bottom: 1rem;"></i>
+            <h3 style="font-weight: 700; margin-bottom: 1rem; color: var(--text-dark);">Web Platform</h3>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Full-featured web app with voice commands and comprehensive transaction management.</p>
+            <ul style="list-style: none; color: var(--text-muted); font-size: 0.9rem; text-align: left;">
+              <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--tertiary); margin-right: 0.5rem;"></i>Browser voice API</li>
+              <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--tertiary); margin-right: 0.5rem;"></i>Advanced analytics</li>
+              <li><i class="fas fa-check" style="color: var(--tertiary); margin-right: 0.5rem;"></i>Bulk operations</li>
+            </ul>
+          </div>
+          
+          <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-md); border: 1px solid rgba(129, 140, 248, 0.1); text-align: center;">
+            <i class="fas fa-code" style="font-size: 3rem; color: var(--primary); margin-bottom: 1rem;"></i>
+            <h3 style="font-weight: 700; margin-bottom: 1rem; color: var(--text-dark);">Developer API</h3>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Integrate voice-activated remittances into your own applications and services.</p>
+            <ul style="list-style: none; color: var(--text-muted); font-size: 0.9rem; text-align: left;">
+              <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--tertiary); margin-right: 0.5rem;"></i>RESTful API</li>
+              <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--tertiary); margin-right: 0.5rem;"></i>SDKs available</li>
+              <li><i class="fas fa-check" style="color: var(--tertiary); margin-right: 0.5rem;"></i>Webhook support</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Advanced Features -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Advanced Intelligence</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-brain"></i>
+            </div>
+            <h3 class="feature-title">Smart Rate Optimization</h3>
+            <p class="feature-description">AI monitors market conditions and automatically selects the best exchange rates and stablecoin routes.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-user-friends"></i>
+            </div>
+            <h3 class="feature-title">Contact Intelligence</h3>
+            <p class="feature-description">Learns recipient preferences, delivery methods, and optimal sending times for each contact.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-chart-bar"></i>
+            </div>
+            <h3 class="feature-title">Spending Insights</h3>
+            <p class="feature-description">Track transfer patterns, currency trends, and savings with detailed analytics and reporting.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-bell"></i>
+            </div>
+            <h3 class="feature-title">Smart Notifications</h3>
+            <p class="feature-description">Intelligent alerts for rate changes, transfer confirmations, and optimal sending opportunities.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-calendar-check"></i>
+            </div>
+            <h3 class="feature-title">Scheduled Transfers</h3>
+            <p class="feature-description">Set up recurring payments with voice commands. "Send $200 to mom every month."</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-language"></i>
+            </div>
+            <h3 class="feature-title">Auto-Translation</h3>
+            <p class="feature-description">Seamless communication with recipients in their preferred language with real-time translation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Token Features -->
+    <section class="section" style="background: linear-gradient(to right, rgba(79, 70, 229, 0.05), rgba(236, 72, 153, 0.05));">
+      <div class="container">
+        <h2 class="section-title">REMT Token Benefits</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+          <div>
+            <h3 style="font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--text-dark);">
+              Earn While You Send
+            </h3>
+            <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 2rem;">
+              Every voice transfer earns REMT tokens. Hold tokens for fee discounts, staking rewards, and governance voting rights.
+            </p>
+            <div style="space-y: 1rem;">
+              <div style="margin-bottom: 1rem;">
+                <h4 style="font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem;">Transfer Rewards</h4>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">0.1% of transfer amount in REMT tokens</p>
+              </div>
+              <div style="margin-bottom: 1rem;">
+                <h4 style="font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem;">Fee Discounts</h4>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Up to 50% reduction in transfer fees</p>
+              </div>
+              <div>
+                <h4 style="font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem;">Staking Yields</h4>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">8-15% APY from protocol revenue sharing</p>
+              </div>
+            </div>
+          </div>
+          
+          <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-md); border: 1px solid rgba(129, 140, 248, 0.1);">
+            <h4 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--text-dark);">Token Utility</h4>
+            <div style="space-y: 1rem;">
+              <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <i class="fas fa-percentage" style="color: var(--primary); width: 20px;"></i>
+                <span style="color: var(--text-muted);">Fee discounts up to 50%</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <i class="fas fa-vote-yea" style="color: var(--primary); width: 20px;"></i>
+                <span style="color: var(--text-muted);">Governance voting rights</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <i class="fas fa-chart-line" style="color: var(--primary); width: 20px;"></i>
+                <span style="color: var(--text-muted);">Staking yield generation</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <i class="fas fa-crown" style="color: var(--primary); width: 20px;"></i>
+                <span style="color: var(--text-muted);">Premium features access</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 1rem;">
+                <i class="fas fa-gift" style="color: var(--primary); width: 20px;"></i>
+                <span style="color: var(--text-muted);">Referral bonus multipliers</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Try Now CTA -->
+    <section class="section">
+      <div class="container">
+        <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+          <h2 class="section-title">Experience the Future</h2>
+          <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.7;">
+            Ready to send money with just your voice? Join thousands of users already experiencing the future of remittances.
+          </p>
+          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="https://app.remittease.xyz" class="primary-btn">
+              <i class="fas fa-rocket"></i> Start Free Trial
+            </a>
+            <a href="about.html" class="secondary-btn">
+              <i class="fas fa-info-circle"></i> Learn More
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-column">
+        <div class="footer-logo">RemittEase</div>
+        <p class="footer-description">Making global remittances fast, affordable, and accessible with AI and blockchain technology.</p>
+        <div class="social-links">
+          <a href="https://x.com/remitt_ease" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="https://discord.gg/ewmuwbZFgS" class="social-link"><i class="fab fa-discord"></i></a>
+          <a href="https://medium.com/@RemittEase" class="social-link"><i class="fab fa-medium"></i></a>
+          <a href="https://open.spotify.com/show/5Gx98emQG99UwMSsF9hoR4" class="social-link"><i class="fab fa-spotify"></i></a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h4>Company</h4>
+        <div class="footer-links">
+          <a href="about.html" class="footer-link">About Us</a>
+          <a href="careers.html" class="footer-link">Careers</a>
+          <a href="#" class="footer-link">Blog</a>
+          <a href="#" class="footer-link">Press</a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h4>Product</h4>
+        <div class="footer-links">
+          <a href="features.html" class="footer-link">Features</a>
+          <a href="security.html" class="footer-link">Security</a>
+          <a href="token.html" class="footer-link">Token</a>
+          <a href="roadmap.html" class="footer-link">Roadmap</a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h4>Support</h4>
+        <div class="footer-links">
+          <a href="help-center.html" class="footer-link">Help Center</a>
+          <a href="contact.html" class="footer-link">Contact Us</a>
+          <a href="#" class="footer-link">Status</a>
+          <a href="api-docs.html" class="footer-link">API Docs</a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; 2025 RemittEase. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script>
+    const themeToggle = document.getElementById('themeToggle');
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const backdrop = document.getElementById('backdrop');
+    const backToTop = document.getElementById('backToTop');
+
+    themeToggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark-mode');
+      themeToggle.innerHTML = document.documentElement.classList.contains('dark-mode') 
+        ? '<i class="fas fa-sun"></i>' 
+        : '<i class="fas fa-moon"></i>';
+    });
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+      backdrop.classList.toggle('active');
+      mobileMenuBtn.innerHTML = mobileMenu.classList.contains('active') 
+        ? '<i class="fas fa-times"></i>' 
+        : '<i class="fas fa-bars"></i>';
+    });
+
+    backdrop.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+      backdrop.classList.remove('active');
+      mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+    });
+
+    document.querySelectorAll('.mobile-menu .nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        backdrop.classList.remove('active');
+        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+      });
+    });
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) {
+        backToTop.classList.add('active');
+      } else {
+        backToTop.classList.remove('active');
+      }
+    });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+</body>
+</html>
