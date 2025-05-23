@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#4f46e5">
+  <title>Roadmap – RemittEase</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .roadmap-timeline {
+      position: relative;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .timeline-line {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(to bottom, var(--primary), var(--secondary));
+      transform: translateX(-50%);
+      z-index: 1;
+    }
+    .roadmap-item {
+      position: relative;
+      margin-bottom: 4rem;
+      display: flex;
+      align-items: center;
+    }
+    .roadmap-item:nth-child(odd) {
+      justify-content: flex-start;
+    }
+    .roadmap-item:nth-child(even) {
+      justify-content: flex-end;
+    }
+    .roadmap-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid rgba(129, 140, 248, 0.1);
+      width: 45%;
+      position: relative;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .roadmap-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+    .roadmap-item:nth-child(odd) .roadmap-card {
+      margin-right: auto;
+    }
+    .roadmap-item:nth-child(even) .roadmap-card {
+      margin-left: auto;
+    }
+    .roadmap-dot {
+      position: absolute;
+      left: 50%;
+      top: 2rem;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--primary);
+      transform: translateX(-50%);
+      z-index: 2;
+      border: 4px solid var(--background);
+    }
+    .roadmap-dot.completed {
+      background: var(--tertiary);
+    }
+    .roadmap-dot.current {
+      background: var(--secondary);
+      animation: pulse-dot 2s infinite;
+    }
+    @keyframes pulse-dot {
+      0% { box-shadow: 0 0 0 0 rgba(236, 72, 153, 0.7); }
+      70% { box-shadow: 0 0 0 10px rgba(236, 72, 153, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(236, 72, 153, 0); }
+    }
+    .quarter-label {
+      position: absolute;
+      left: 50%;
+      top: -0.5rem;
+      background: var(--card-bg);
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      font-size: 0.9rem;
+      transform: translateX(-50%);
+      z-index: 3;
+      border: 2px solid var(--primary);
+    }
+    .quarter-label.completed { border-color: var(--tertiary); color: var(--tertiary); }
+    .quarter-label.current { border-color: var(--secondary); color: var(--secondary); }
+    .status-badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: var(--radius-full);
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .status-completed { background: rgba(16, 185, 129, 0.1); color: var(--tertiary); }
+    .status-current { background: rgba(236, 72, 153, 0.1); color: var(--secondary); }
+    .status-planned { background: rgba(79, 70, 229, 0.1); color: var(--primary); }
+    @media (max-width: 768px) {
+      .timeline-line { left: 2rem; }
+      .roadmap-item { justify-content: flex-start !important; }
+      .roadmap-card { width: calc(100% - 4rem); margin-left: 4rem !important; margin-right: 0 !important; }
+      .roadmap-dot { left: 2rem; }
+      .quarter-label { left: 2rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <a href="index.html" class="logo">
+      <img src="RE icon.png" alt="RemittEase" style="width: 32px; height: 32px; border-radius: 50%;">
+      RemittEase
+    </a>
+    <nav class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="security.html" class="nav-link">Security</a>
+      <a href="token.html" class="nav-link">Token</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode">
+        <i class="fas fa-moon"></i>
+      </button>
+      <a href="https://app.remittease.xyz" class="cta-button">Try Now</a>
+    </div>
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+      <i class="fas fa-bars"></i>
+    </button>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="security.html" class="nav-link">Security</a>
+    <a href="token.html" class="nav-link">Token</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </div>
+  <div class="backdrop" id="backdrop"></div>
+
+  <!-- Main -->
+  <main id="main" style="margin-top: 80px;">
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: 60vh;">
+      <div class="blob-container">
+        <svg class="blob-svg" viewBox="0 0 500 500" aria-hidden="true">
+          <defs>
+            <linearGradient id="blobGradient" gradientTransform="rotate(45)">
+              <stop offset="0%" stop-color="rgba(79, 70, 229, 0.4)"/>
+              <stop offset="100%" stop-color="rgba(236, 72, 153, 0.4)"/>
+            </linearGradient>
+          </defs>
+          <path fill="url(#blobGradient)" d="M421.5,304Q389,358,334.5,393.5Q280,429,225,397.5Q170,366,121,321Q72,276,88.5,210Q105,144,162,108Q219,72,278,84.5Q337,97,377.5,142Q418,187,421.5,304Z"/>
+        </svg>
+      </div>
+
+      <div class="container" style="display: flex; align-items: center; justify-content: center; text-align: center;">
+        <div style="max-width: 700px; position: relative; z-index: 10;">
+          <h1 style="font-size: 3.5rem; font-weight: 800; margin-bottom: 1.5rem; background: linear-gradient(to right, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+            Product Roadmap
+          </h1>
+          <p style="font-size: 1.25rem; color: var(--text-muted); margin-bottom: 2rem;">
+            Follow our journey as we build the future of voice-activated remittances with AI and blockchain technology.
+          </p>
+          <div class="feature-badges" style="justify-content: center; margin-bottom: 0;">
+            <div class="badge ai-badge"><i class="fas fa-microphone"></i> Voice-First</div>
+            <div class="badge"><i class="fas fa-rocket"></i> Fast Innovation</div>
+            <div class="badge"><i class="fas fa-users"></i> Community Driven</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Roadmap Timeline -->
+    <section class="section">
+      <div class="container">
+        <div class="roadmap-timeline">
+          <div class="timeline-line"></div>
+
+          <!-- P1 - Foundation -->
+          <div class="roadmap-item">
+            <div class="quarter-label completed">Phase 1</div>
+            <div class="roadmap-dot completed"></div>
+            <div class="roadmap-card">
+              <div class="status-badge status-completed">Completed</div>
+              <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-dark);">Foundation & MVP</h3>
+              <ul style="color: var(--text-muted); line-height: 1.6; list-style: none; margin-left: 0;">
+                <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--tertiary); margin-right: 0.75rem;"></i>Core team assembly</li>
+                <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--tertiary); margin-right: 0.75rem;"></i>Initial funding round</li>
+                <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--tertiary); margin-right: 0.75rem;"></i>MVP development</li>
+                <li><i class="fas fa-check" style="color: var(--tertiary); margin-right: 0.75rem;"></i>Basic voice recognition</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Phase 2 - Alpha Launch -->
+          <div class="roadmap-item">
+            <div class="quarter-label completed">Phase 2</div>
+            <div class="roadmap-dot completed"></div>
+            <div class="roadmap-card">
+              <div class="status-badge status-completed">Completed</div>
+              <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-dark);">Alpha Launch</h3>
+              <ul style="color: var(--text-muted); line-height: 1.6; list-style: none; margin-left: 0;">
+                <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--tertiary); margin-right: 0.75rem;"></i>Alpha platform launch</li>
+                <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--tertiary); margin-right: 0.75rem;"></i>Voice biometric system</li>
+                <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--tertiary); margin-right: 0.75rem;"></i>USDC integration</li>
+                <li><i class="fas fa-check" style="color: var(--tertiary); margin-right: 0.75rem;"></i>First 100 beta users</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Q2 2025 - Current -->
+          <div class="roadmap-item">
+            <div class="quarter-label current">Phase 3</div>
+            <div class="roadmap-dot current"></div>
+            <div class="roadmap-card">
+              <div class="status-badge status-current">In Progress</div>
+              <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-dark);">Beta Expansion</h3>
+              <ul style="color: var(--text-muted); line-height: 1.6; list-style: none; margin-left: 0;">
+                <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--tertiary); margin-right: 0.75rem;"></i>Public beta launch</li>
+                <li style="margin-bottom: 0.5rem;"><i class="fas fa-spinner fa-spin" style="color: var(--secondary); margin-right: 0.75rem;"></i>REMT token launch</li>
+                <li style="margin-bottom: 0.5rem;"><i class="fas fa-clock" style="color: var(--text-muted); margin-right: 0.75rem;"></i>Mobile app release</li>
+                <li><i class="fas fa-clock" style="color: var(--text-muted); margin-right: 0.75rem;"></i>Multi-language support</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Q3 2025 - Scale -->
+          <div class="roadmap-item">
+            <div class="quarter-label planned">Phase 4</div>
+            <div class="roadmap-dot"></div>
+            <div class="roadmap-card">
+              <div class="status-badge status-planned">Planned</div>
+              <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-dark);">Scale & Optimize</h3>
+              <ul style="color: var(--text-muted); line-height: 1.6; list-style: none; margin-left: 0;">
+                <li style="margin-bottom: 0.5rem;"><i class="fas fa-circle" style="color: var(--primary); margin-right: 0.75rem; font-size: 0.5rem;"></i>Advanced AI voice models</li>
+                <li style="margin-bottom: 0.5rem;"><i class="fas fa-circle" style="color: var(--primary); margin-right: 0.75rem; font-size: 0.5rem;"></i>Additional stablecoins (USDT, DAI)</li>
+                <li style="margin-bottom: 0.5rem;"><i class="fas fa-circle" style="color: var(--primary); margin-right: 0.75rem; font-size: 0.5rem;"></i>European market expansion</li>
+                <li><i class="fas fa-circle" style="color: var(--primary); margin-right: 0.75rem; font-size: 0.5rem;"></i>DeFi yield integration</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Q4 2025 - Global -->
+          <div class="roadmap-item">
+            <div class="quarter-label planned">Phase 5</div>
+            <div class="roadmap-dot"></div>
+            <div class="roadmap-card">
+              <div class="status-badge status-planned">Planned</div>
+              <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-dark);">Global Reach</h3>
+              <ul style="color: var(--text-muted); line-height: 1.6; list-style: none; margin-left: 0;">
+                <li style="margin-bottom: 0.5rem;"><i class="fas fa-circle" style="color: var(--primary); margin-right: 0.75rem; font-size: 0.5rem;"></i>Asian market launch</li>
+                <li style="margin-bottom: 0.5rem;"><i class="fas fa-circle" style="color: var(--primary); margin-right: 0.75rem; font-size: 0.5rem;"></i>WhatsApp integration</li>
+                <li style="margin-bottom: 0.5rem;"><i class="fas fa-circle" style="color: var(--primary); margin-right: 0.75rem; font-size: 0.5rem;"></i>Smart contract automation</li>
+                <li><i class="fas fa-circle" style="color: var(--primary); margin-right: 0.75rem; font-size: 0.5rem;"></i>1M+ user milestone</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Q1 2026 - Innovation -->
+          <div class="roadmap-item">
+            <div class="quarter-label planned">Phase 6</div>
+            <div class="roadmap-dot"></div>
+            <div class="roadmap-card">
+              <div class="status-badge status-planned">Research</div>
+              <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-dark);">Next-Gen Features</h3>
+              <ul style="color: var(--text-muted); line-height: 1.6; list-style: none; margin-left: 0;">
+                <li style="margin-bottom: 0.5rem;"><i class="fas fa-circle" style="color: var(--primary); margin-right: 0.75rem; font-size: 0.5rem;"></i>AI financial assistant</li>
+                <li style="margin-bottom: 0.5rem;"><i class="fas fa-circle" style="color: var(--primary); margin-right: 0.75rem; font-size: 0.5rem;"></i>Cross-chain interoperability</li>
+                <li style="margin-bottom: 0.5rem;"><i class="fas fa-circle" style="color: var(--primary); margin-right: 0.75rem; font-size: 0.5rem;"></i>Voice-activated trading</li>
+                <li><i class="fas fa-circle" style="color: var(--primary); margin-right: 0.75rem; font-size: 0.5rem;"></i>IoT device integration</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Q2 2026 - Ecosystem -->
+          <div class="roadmap-item">
+            <div class="quarter-label planned">Phase 7</div>
+            <div class="roadmap-dot"></div>
+            <div class="roadmap-card">
+              <div class="status-badge status-planned">Vision</div>
+              <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-dark);">Ecosystem Platform</h3>
+              <ul style="color: var(--text-muted); line-height: 1.6; list-style: none; margin-left: 0;">
+                <li style="margin-bottom: 0.5rem;"><i class="fas fa-circle" style="color: var(--primary); margin-right: 0.75rem; font-size: 0.5rem;"></i>Partner API marketplace</li>
+                <li style="margin-bottom: 0.5rem;"><i class="fas fa-circle" style="color: var(--primary); margin-right: 0.75rem; font-size: 0.5rem;"></i>Voice banking services</li>
+                <li style="margin-bottom: 0.5rem;"><i class="fas fa-circle" style="color: var(--primary); margin-right: 0.75rem; font-size: 0.5rem;"></i>Decentralized governance</li>
+                <li><i class="fas fa-circle" style="color: var(--primary); margin-right: 0.75rem; font-size: 0.5rem;"></i>Global financial inclusion</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Milestones -->
+    <section class="section" style="background: linear-gradient(to right, rgba(79, 70, 229, 0.05), rgba(236, 72, 153, 0.05));">
+      <div class="container">
+        <h2 class="section-title">Key Milestones</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 900px; margin: 0 auto;">
+          <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 2rem; text-align: center; box-shadow: var(--shadow-md); border: 1px solid rgba(129, 140, 248, 0.1);">
+            <i class="fas fa-users" style="font-size: 2rem; color: var(--tertiary); margin-bottom: 1rem;"></i>
+            <h3 style="font-weight: 700; margin-bottom: 0.5rem; color: var(--text-dark);">100 Beta Users</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Phase 1</p>
+          </div>
+          <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 2rem; text-align: center; box-shadow: var(--shadow-md); border: 1px solid rgba(129, 140, 248, 0.1);">
+            <i class="fas fa-coins" style="font-size: 2rem; color: var(--secondary); margin-bottom: 1rem;"></i>
+            <h3 style="font-weight: 700; margin-bottom: 0.5rem; color: var(--text-dark);">REMT Token</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Phase 2</p>
+          </div>
+          <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 2rem; text-align: center; box-shadow: var(--shadow-md); border: 1px solid rgba(129, 140, 248, 0.1);">
+            <i class="fas fa-mobile-alt" style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;"></i>
+            <h3 style="font-weight: 700; margin-bottom: 0.5rem; color: var(--text-dark);">Mobile App</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Phase 3</p>
+          </div>
+          <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 2rem; text-align: center; box-shadow: var(--shadow-md); border: 1px solid rgba(129, 140, 248, 0.1);">
+            <i class="fas fa-chart-line" style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;"></i>
+            <h3 style="font-weight: 700; margin-bottom: 0.5rem; color: var(--text-dark);">1M Users</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Goal Phase 4</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Community Feedback -->
+    <section class="section">
+      <div class="container">
+        <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+          <h2 class="section-title">Shape Our Roadmap</h2>
+          <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.7;">
+            Our roadmap is community-driven. Join our Discord to vote on features, suggest improvements, and help prioritize development.
+          </p>
+          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="https://discord.gg/ewmuwbZFgS" class="primary-btn">
+              <i class="fab fa-discord"></i> Join Discord
+            </a>
+            <a href="token.html#governance" class="secondary-btn">
+              <i class="fas fa-vote-yea"></i> Governance
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-column">
+        <div class="footer-logo">RemittEase</div>
+        <p class="footer-description">Making global remittances fast, affordable, and accessible with AI and blockchain technology.</p>
+        <div class="social-links">
+          <a href="https://x.com/remitt_ease" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="https://discord.gg/ewmuwbZFgS" class="social-link"><i class="fab fa-discord"></i></a>
+          <a href="https://medium.com/@RemittEase" class="social-link"><i class="fab fa-medium"></i></a>
+          <a href="https://open.spotify.com/show/5Gx98emQG99UwMSsF9hoR4" class="social-link"><i class="fab fa-spotify"></i></a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h4>Company</h4>
+        <div class="footer-links">
+          <a href="about.html" class="footer-link">About Us</a>
+          <a href="careers.html" class="footer-link">Careers</a>
+          <a href="#" class="footer-link">Blog</a>
+          <a href="#" class="footer-link">Press</a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h4>Product</h4>
+        <div class="footer-links">
+          <a href="#" class="footer-link">Features</a>
+          <a href="security.html" class="footer-link">Security</a>
+          <a href="token.html" class="footer-link">Token</a>
+          <a href="roadmap.html" class="footer-link">Roadmap</a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h4>Support</h4>
+        <div class="footer-links">
+          <a href="help-center.html" class="footer-link">Help Center</a>
+          <a href="contact.html" class="footer-link">Contact Us</a>
+          <a href="#" class="footer-link">Status</a>
+          <a href="api-docs.html" class="footer-link">API Docs</a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; 2025 RemittEase. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script>
+    const themeToggle = document.getElementById('themeToggle');
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const backdrop = document.getElementById('backdrop');
+    const backToTop = document.getElementById('backToTop');
+
+    themeToggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark-mode');
+      themeToggle.innerHTML = document.documentElement.classList.contains('dark-mode') 
+        ? '<i class="fas fa-sun"></i>' 
+        : '<i class="fas fa-moon"></i>';
+    });
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+      backdrop.classList.toggle('active');
+      mobileMenuBtn.innerHTML = mobileMenu.classList.contains('active') 
+        ? '<i class="fas fa-times"></i>' 
+        : '<i class="fas fa-bars"></i>';
+    });
+
+    backdrop.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+      backdrop.classList.remove('active');
+      mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+    });
+
+    document.querySelectorAll('.mobile-menu .nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        backdrop.classList.remove('active');
+        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+      });
+    });
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) {
+        backToTop.classList.add('active');
+      } else {
+        backToTop.classList.remove('active');
+      }
+    });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+</body>
+</html>
