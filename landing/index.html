@@ -710,16 +710,49 @@
     // Calculate on load
     calculateRemittance();
 
-    // World Map
+// World Map
     const mapPoints = [
-      { top: '35%', left: '20%', text: '🇺🇸 New York – AI-Optimized $500' },
-      { top: '30%', left: '50%', text: '🇬🇧 London – Smart Route £300' },
-      { top: '55%', left: '45%', text: '🇳🇬 Lagos – Received ₦200,000' },
-      { top: '60%', left: '50%', text: '🇰🇪 Nairobi – AI Routing KSh 15,000' },
-      { top: '65%', left: '40%', text: '🇿🇦 Joburg – Optimized R 2,000' },
-      { top: '50%', left: '75%', text: '🇮🇳 Mumbai – Smart Transfer ₹10,000' },
-      { top: '40%', left: '25%', text: '🇨🇦 Toronto – AI-Powered C$150' },
-      { top: '75%', left: '80%', text: '🇦🇺 Sydney – Intelligent A$200' }
+      // North America
+      { top: '41%', left: '28%', text: '🇺🇸 New York – AI-Optimized $500' },
+      { top: '38%', left: '27%', text: '🇨🇦 Toronto – Voice Transfer C$150' },
+      { top: '46%', left: '22%', text: '🇺🇸 Los Angeles – Smart Send $750' },
+      { top: '50%', left: '24%', text: '🇲🇽 Mexico City – Quick Transfer $200' },
+      
+      // Europe
+      { top: '35%', left: '48%', text: '🇬🇧 London – Smart Route £300' },
+      { top: '34%', left: '51%', text: '🇩🇪 Berlin – AI Transfer €450' },
+      { top: '37%', left: '49%', text: '🇫🇷 Paris – Voice Send €275' },
+      { top: '28%', left: '52%', text: '🇸🇪 Stockholm – Digital Kr 1,200' },
+      
+      // Africa
+      { top: '52%', left: '50%', text: '🇳🇬 Lagos – Received ₦200,000' },
+      { top: '62%', left: '58%', text: '🇰🇪 Nairobi – AI Routing KSh 15,000' },
+      { top: '70%', left: '56%', text: '🇿🇦 Joburg – Optimized R 2,000' },
+      { top: '48%', left: '54%', text: '🇪🇬 Cairo – Smart Transfer £E 500' },
+      { top: '52%', left: '48%', text: '🇬🇭 Accra – Voice Payment ₵ 800' },
+      
+      // Asia
+      { top: '51%', left: '67%', text: '🇮🇳 Mumbai – Smart Transfer ₹10,000' },
+      { top: '48%', left: '72%', text: '🇧🇩 Dhaka – AI Send ৳ 12,000' },
+      { top: '47%', left: '64%', text: '🇵🇰 Karachi – Voice Transfer ₨ 25,000' },
+      { top: '45%', left: '84%', text: '🇯🇵 Tokyo – Digital ¥ 15,000' },
+      { top: '58%', left: '78%', text: '🇵🇭 Manila – Quick Send ₱ 5,500' },
+      { top: '59%', left: '74%', text: '🇲🇾 Kuala Lumpur – Smart RM 420' },
+      { top: '62%', left: '75%', text: '🇸🇬 Singapore – AI Transfer S$ 680' },
+      { top: '47%', left: '61%', text: '🇦🇪 Dubai – Voice Send AED 900' },
+      { top: '43%', left: '81%', text: '🇰🇷 Seoul – Digital ₩ 150,000' },
+      { top: '44%', left: '79%', text: '🇨🇳 Shanghai – Smart Transfer ¥ 1,200' },
+      { top: '48%', left: '78%', text: '🇭🇰 Hong Kong – AI Send HK$ 780' },
+      
+      // Oceania
+      { top: '75%', left: '86%', text: '🇦🇺 Sydney – Intelligent A$200' },
+      { top: '72%', left: '91%', text: '🇳🇿 Auckland – Voice Transfer NZ$ 150' },
+      
+      // South America
+      { top: '68%', left: '35%', text: '🇧🇷 São Paulo – Smart Transfer R$ 500' },
+      { top: '72%', left: '33%', text: '🇦🇷 Buenos Aires – AI Send $ 350' },
+      { top: '59%', left: '30%', text: '🇨🇴 Bogotá – Voice Transfer $ 200' },
+      { top: '74%', left: '31%', text: '🇨🇱 Santiago – Digital Transfer $ 180' }
     ];
 
     mapPoints.forEach(point => {
