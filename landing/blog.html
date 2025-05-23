@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#4f46e5">
+  <title>Blog – RemittEase</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .blog-filters {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+    .filter-btn {
+      padding: 0.5rem 1.25rem;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(129, 140, 248, 0.2);
+      background: var(--card-bg);
+      color: var(--text-muted);
+      font-weight: 500;
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    .blog-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      border: 1px solid rgba(129, 140, 248, 0.1);
+      transition: transform var(--transition), box-shadow var(--transition);
+      cursor: pointer;
+    }
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+    .blog-image {
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 3rem;
+    }
+    .blog-content {
+      padding: 1.5rem;
+    }
+    .blog-category {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: var(--radius-full);
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .category-ai { background: rgba(79, 70, 229, 0.1); color: var(--primary); }
+    .category-blockchain { background: rgba(236, 72, 153, 0.1); color: var(--secondary); }
+    .category-company { background: rgba(16, 185, 129, 0.1); color: var(--tertiary); }
+    .category-tutorial { background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
+    .blog-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+    .blog-excerpt {
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    .blog-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+    .featured-post {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+    .featured-image {
+      width: 100%;
+      height: 300px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 4rem;
+    }
+    @media (max-width: 768px) {
+      .featured-post {
+        grid-template-columns: 1fr;
+      }
+      .blog-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <a href="index.html" class="logo">
+      <img src="RE icon.png" alt="RemittEase" style="width: 32px; height: 32px; border-radius: 50%;">
+      RemittEase
+    </a>
+    <nav class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="features.html" class="nav-link">Features</a>
+      <a href="security.html" class="nav-link">Security</a>
+      <a href="token.html" class="nav-link">Token</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode">
+        <i class="fas fa-moon"></i>
+      </button>
+      <a href="https://app.remittease.xyz" class="cta-button">Try Now</a>
+    </div>
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+      <i class="fas fa-bars"></i>
+    </button>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="features.html" class="nav-link">Features</a>
+    <a href="security.html" class="nav-link">Security</a>
+    <a href="token.html" class="nav-link">Token</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </div>
+  <div class="backdrop" id="backdrop"></div>
+
+  <!-- Main -->
+  <main id="main" style="margin-top: 80px;">
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: 50vh;">
+      <div class="container" style="display: flex; align-items: center; justify-content: center; text-align: center;">
+        <div style="max-width: 700px; position: relative; z-index: 10;">
+          <h1 style="font-size: 3rem; font-weight: 800; margin-bottom: 1rem; background: linear-gradient(to right, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+            RemittEase Blog
+          </h1>
+          <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2rem;">
+            Insights on voice AI, blockchain remittances, and the future of global finance.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Content -->
+    <section class="section">
+      <div class="container">
+        <!-- Filters -->
+        <div class="blog-filters">
+          <button class="filter-btn active" data-category="all">All Posts</button>
+          <button class="filter-btn" data-category="ai">AI & Voice</button>
+          <button class="filter-btn" data-category="blockchain">Blockchain</button>
+          <button class="filter-btn" data-category="company">Company</button>
+          <button class="filter-btn" data-category="tutorial">Tutorials</button>
+        </div>
+
+        <!-- Blog Posts -->
+        <div class="blog-grid">
+          <!-- Featured Post -->
+          <article class="blog-card featured-post" data-category="ai">
+            <div class="featured-image">
+              <i class="fas fa-microphone"></i>
+            </div>
+            <div>
+              <span class="blog-category category-ai">AI & Voice</span>
+              <h2 class="blog-title" style="font-size: 2rem;">The Future of Voice Banking: Beyond "Send $100 to Mom"</h2>
+              <p class="blog-excerpt" style="font-size: 1.1rem;">
+                How natural language processing and voice biometrics are revolutionizing financial services. We explore the technology behind RemittEase and what's coming next in voice-activated finance.
+              </p>
+              <div class="blog-meta">
+                <span>By Nyoni Noble</span>
+                <span>5 min read • May 20, 2025</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Regular Posts -->
+          <article class="blog-card" data-category="blockchain">
+            <div class="blog-image">
+              <i class="fas fa-coins"></i>
+            </div>
+            <div class="blog-content">
+              <span class="blog-category category-blockchain">Blockchain</span>
+              <h3 class="blog-title">Why We Chose Stablecoins for Cross-Border Payments</h3>
+              <p class="blog-excerpt">
+                Traditional banking infrastructure wasn't built for instant global transfers. Here's how USDC and stablecoins solve the speed and cost problem.
+              </p>
+              <div class="blog-meta">
+                <span>By Arigundia Ryan</span>
+                <span>4 min read • May 18, 2025</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card" data-category="company">
+            <div class="blog-image">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <div class="blog-content">
+              <span class="blog-category category-company">Company</span>
+              <h3 class="blog-title">Building RemittEase: Our Journey from Idea to Beta</h3>
+              <p class="blog-excerpt">
+                From frustrated immigrants to fintech founders. The story behind RemittEase and why we believe voice is the future of money transfers.
+              </p>
+              <div class="blog-meta">
+                <span>By Nyoni Noble</span>
+                <span>6 min read • May 15, 2025</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card" data-category="tutorial">
+            <div class="blog-image">
+              <i class="fas fa-play-circle"></i>
+            </div>
+            <div class="blog-content">
+              <span class="blog-category category-tutorial">Tutorial</span>
+              <h3 class="blog-title">Getting Started with Voice Transfers</h3>
+              <p class="blog-excerpt">
+                Step-by-step guide to setting up your voice profile and making your first transfer with just your voice.
+              </p>
+              <div class="blog-meta">
+                <span>By Sarah Chen</span>
+                <span>3 min read • May 12, 2025</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card" data-category="ai">
+            <div class="blog-image">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <div class="blog-content">
+              <span class="blog-category category-ai">AI & Voice</span>
+              <h3 class="blog-title">Voice Biometrics: More Secure Than Passwords</h3>
+              <p class="blog-excerpt">
+                How we achieve 99.999% accuracy in voice authentication and why your voice is harder to fake than you think.
+              </p>
+              <div class="blog-meta">
+                <span>By Marcus Chen</span>
+                <span>5 min read • May 10, 2025</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card" data-category="blockchain">
+            <div class="blog-image">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <div class="blog-content">
+              <span class="blog-category category-blockchain">Blockchain</span>
+              <h3 class="blog-title">REMT Tokenomics Explained</h3>
+              <p class="blog-excerpt">
+                Deep dive into our token distribution, staking rewards, and how REMT holders benefit from platform growth.
+              </p>
+              <div class="blog-meta">
+                <span>By Arigundia Ryan</span>
+                <span>7 min read • May 8, 2025</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card" data-category="company">
+            <div class="blog-image">
+              <i class="fas fa-globe-africa"></i>
+            </div>
+            <div class="blog-content">
+              <span class="blog-category category-company">Company</span>
+              <h3 class="blog-title">Expanding to 50+ Countries: Our Global Vision</h3>
+              <p class="blog-excerpt">
+                How we're building infrastructure to serve remittance corridors worldwide and bringing financial inclusion to underserved communities.
+              </p>
+              <div class="blog-meta">
+                <span>By Nyoni Noble</span>
+                <span>4 min read • May 5, 2025</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card" data-category="tutorial">
+            <div class="blog-image">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <div class="blog-content">
+              <span class="blog-category category-tutorial">Tutorial</span>
+              <h3 class="blog-title">Mobile App Beta: New Features Guide</h3>
+              <p class="blog-excerpt">
+                Explore offline voice processing, enhanced security features, and improved user experience in our latest mobile release.
+              </p>
+              <div class="blog-meta">
+                <span>By Sarah Chen</span>
+                <span>4 min read • May 3, 2025</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card" data-category="ai">
+            <div class="blog-image">
+              <i class="fas fa-language"></i>
+            </div>
+            <div class="blog-content">
+              <span class="blog-category category-ai">AI & Voice</span>
+              <h3 class="blog-title">Breaking Language Barriers in Finance</h3>
+              <p class="blog-excerpt">
+                How our multi-language AI enables seamless remittances across linguistic boundaries and cultural contexts.
+              </p>
+              <div class="blog-meta">
+                <span>By Dr. Amara Okafor</span>
+                <span>6 min read • April 30, 2025</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card" data-category="blockchain">
+            <div class="blog-image">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <div class="blog-content">
+              <span class="blog-category category-blockchain">Blockchain</span>
+              <h3 class="blog-title">DeFi Integration: Earning Yield on Idle Balances</h3>
+              <p class="blog-excerpt">
+                How we're integrating with leading DeFi protocols to generate passive income while maintaining instant liquidity for transfers.
+              </p>
+              <div class="blog-meta">
+                <span>By Arigundia Ryan</span>
+                <span>5 min read • April 28, 2025</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Newsletter Signup -->
+        <div style="background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: var(--radius-lg); padding: 3rem; text-align: center; color: white;">
+          <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">Stay Updated</h3>
+          <p style="margin-bottom: 2rem; opacity: 0.9;">Get the latest insights on voice AI, blockchain, and the future of finance delivered to your inbox.</p>
+          <div style="display: flex; gap: 1rem; justify-content: center; max-width: 400px; margin: 0 auto;">
+            <input type="email" placeholder="Your email address" style="flex: 1; padding: 0.75rem 1rem; border: none; border-radius: var(--radius-md); font-size: 1rem;">
+            <button style="padding: 0.75rem 1.5rem; background: white; color: var(--primary); border: none; border-radius: var(--radius-md); font-weight: 600; cursor: pointer;">Subscribe</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-column">
+        <div class="footer-logo">RemittEase</div>
+        <p class="footer-description">Making global remittances fast, affordable, and accessible with AI and blockchain technology.</p>
+        <div class="social-links">
+          <a href="https://x.com/remitt_ease" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="https://discord.gg/ewmuwbZFgS" class="social-link"><i class="fab fa-discord"></i></a>
+          <a href="https://medium.com/@RemittEase" class="social-link"><i class="fab fa-medium"></i></a>
+          <a href="https://open.spotify.com/show/5Gx98emQG99UwMSsF9hoR4" class="social-link"><i class="fab fa-spotify"></i></a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h4>Company</h4>
+        <div class="footer-links">
+          <a href="about.html" class="footer-link">About Us</a>
+          <a href="careers.html" class="footer-link">Careers</a>
+          <a href="https://medium.com/@RemittEase" class="footer-link">Blog</a>
+          <a href="blog.html" class="footer-link">Think Tank</a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h4>Product</h4>
+        <div class="footer-links">
+          <a href="features.html" class="footer-link">Features</a>
+          <a href="security.html" class="footer-link">Security</a>
+          <a href="token.html" class="footer-link">Token</a>
+          <a href="roadmap.html" class="footer-link">Roadmap</a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h4>Support</h4>
+        <div class="footer-links">
+          <a href="help-center.html" class="footer-link">Help Center</a>
+          <a href="contact.html" class="footer-link">Contact Us</a>
+          <a href="#" class="footer-link">Status</a>
+          <a href="api-docs.html" class="footer-link">API Docs</a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; 2025 RemittEase. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script>
+    const themeToggle = document.getElementById('themeToggle');
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const backdrop = document.getElementById('backdrop');
+    const backToTop = document.getElementById('backToTop');
+
+    // Theme Toggle
+    themeToggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark-mode');
+      themeToggle.innerHTML = document.documentElement.classList.contains('dark-mode') 
+        ? '<i class="fas fa-sun"></i>' 
+        : '<i class="fas fa-moon"></i>';
+    });
+
+    // Mobile Menu
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+      backdrop.classList.toggle('active');
+      mobileMenuBtn.innerHTML = mobileMenu.classList.contains('active') 
+        ? '<i class="fas fa-times"></i>' 
+        : '<i class="fas fa-bars"></i>';
+    });
+
+    backdrop.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+      backdrop.classList.remove('active');
+      mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+    });
+
+    document.querySelectorAll('.mobile-menu .nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        backdrop.classList.remove('active');
+        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+      });
+    });
+
+    // Back to Top
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) {
+        backToTop.classList.add('active');
+      } else {
+        backToTop.classList.remove('active');
+      }
+    });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Blog Filtering
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const blogCards = document.querySelectorAll('.blog-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Update active filter
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const category = btn.dataset.category;
+
+        // Filter blog posts
+        blogCards.forEach(card => {
+          if (category === 'all' || card.dataset.category === category) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Blog card click handlers
+    blogCards.forEach(card => {
+      card.addEventListener('click', () => {
+        // In a real implementation, this would navigate to the full blog post
+        console.log('Navigate to blog post:', card.querySelector('.blog-title').textContent);
+      });
+    });
+  </script>
+</body>
+</html>
