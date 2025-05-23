@@ -78,43 +78,67 @@
       </div>
     </section>
 
-    <!-- Contact Methods Section -->
-    <section class="section">
-      <div class="container">
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 960px; margin: 0 auto;">
-          <div class="feature-card" style="text-align: center;">
-            <div class="feature-icon">
-              <i class="fas fa-headset"></i>
-            </div>
-            <h3 class="feature-title">24/7 Support</h3>
-            <p class="feature-description">Get instant help with your transfers through our AI assistant or connect with our support team.</p>
-            <a href="https://app.remittease.xyz" class="primary-btn" style="margin-top: 1rem; cursor: pointer; display: inline-block;">
-              <i class="fas fa-comments"></i> Start Chat
-            </a>
-          </div>
-          <div class="feature-card" style="text-align: center;">
-            <div class="feature-icon">
-              <i class="fas fa-envelope"></i>
-            </div>
-            <h3 class="feature-title">Email Support</h3>
-            <p class="feature-description">Send us detailed questions or feedback. We typically respond within 2 hours.</p>
-            <a href="mailto:remittease@gmail.com" class="primary-btn" style="margin-top: 1rem; cursor: pointer; display: inline-block;">
-              <i class="fas fa-paper-plane"></i> Email Us
-            </a>
-          </div>
-          <div class="feature-card" style="text-align: center;">
-            <div class="feature-icon">
-              <i class="fab fa-discord"></i>
-            </div>
-            <h3 class="feature-title">Community</h3>
-            <p class="feature-description">Join our Discord community to connect with other users and get quick answers.</p>
-            <a href="https://discord.gg/ewmuwbZFgS" class="primary-btn" style="margin-top: 1rem; cursor: pointer; display: inline-block;">
-              <i class="fab fa-discord"></i> Join Discord
-            </a>
-          </div>
+   <!-- Contact Methods Section -->
+<section class="section">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 960px; margin: 0 auto;">
+      
+      <!-- Chat Button -->
+      <div class="feature-card" style="text-align: center;">
+        <div class="feature-icon">
+          <i class="fas fa-headset"></i>
         </div>
+        <h3 class="feature-title">24/7 Support</h3>
+        <p class="feature-description">Get instant help with your transfers through our AI assistant or connect with our support team.</p>
+        <a
+          href="https://app.remittease.xyz"
+          class="primary-btn"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="margin-top: 1rem; cursor: pointer; display: inline-block;"
+        >
+          <i class="fas fa-comments"></i> Start Chat
+        </a>
       </div>
-    </section>
+
+      <!-- Email Button -->
+      <div class="feature-card" style="text-align: center;">
+        <div class="feature-icon">
+          <i class="fas fa-envelope"></i>
+        </div>
+        <h3 class="feature-title">Email Support</h3>
+        <p class="feature-description">Send us detailed questions or feedback. We typically respond within 2 hours.</p>
+        <a
+          href="mailto:remittease@gmail.com"
+          class="primary-btn"
+          style="margin-top: 1rem; cursor: pointer; display: inline-block;"
+        >
+          <i class="fas fa-paper-plane"></i> Email Us
+        </a>
+      </div>
+
+      <!-- Discord Button -->
+      <div class="feature-card" style="text-align: center;">
+        <div class="feature-icon">
+          <i class="fab fa-discord"></i>
+        </div>
+        <h3 class="feature-title">Community</h3>
+        <p class="feature-description">Join our Discord community to connect with other users and get quick answers.</p>
+        <a
+          href="https://discord.gg/ewmuwbZFgS"
+          class="primary-btn"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="margin-top: 1rem; cursor: pointer; display: inline-block;"
+        >
+          <i class="fab fa-discord"></i> Join Discord
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
     <!-- Contact Form Section -->
     <section class="section" style="background: linear-gradient(to right, rgba(79, 70, 229, 0.05), rgba(236, 72, 153, 0.05));">
@@ -124,7 +148,7 @@
           <p class="section-subtitle">We'd love to hear from you. Fill out the form below and we'll get back to you soon.</p>
           
           <div style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 3rem; box-shadow: var(--shadow-lg); border: 1px solid rgba(129, 140, 248, 0.1);">
-            <form id="contactForm">
+            <form id="contactForm" action="mailto:remittease@gmail.com" method="post" enctype="text/plain">
               <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
                 <div class="form-group">
                   <label for="firstName" class="form-label">First Name</label>
@@ -281,27 +305,27 @@
         <h4>Company</h4>
         <div class="footer-links">
           <a href="about.html" class="footer-link">About Us</a>
-          <a href="#" class="footer-link">Careers</a>
-          <a href="#" class="footer-link">Blog</a>
-          <a href="#" class="footer-link">Press</a>
+          <a href="careers.html" class="footer-link">Careers</a>
+          <a href="https://medium.com/@RemittEase" class="footer-link">Blog</a>
+          <a href="blog.html" class="footer-link">Think Tank</a>
         </div>
       </div>
       <div class="footer-column">
         <h4>Product</h4>
         <div class="footer-links">
-          <a href="#" class="footer-link">Features</a>
-          <a href="#" class="footer-link">Security</a>
-          <a href="#" class="footer-link">Token</a>
-          <a href="#" class="footer-link">Roadmap</a>
+          <a href="features.html" class="footer-link">Features</a>
+          <a href="security.html" class="footer-link">Security</a>
+          <a href="token.html" class="footer-link">Token</a>
+          <a href="roadmap.html" class="footer-link">Roadmap</a>
         </div>
       </div>
       <div class="footer-column">
         <h4>Support</h4>
         <div class="footer-links">
-          <a href="#" class="footer-link">Help Center</a>
+          <a href="help-center.html" class="footer-link">Help Center</a>
           <a href="contact.html" class="footer-link">Contact Us</a>
           <a href="#" class="footer-link">Status</a>
-          <a href="#" class="footer-link">API Docs</a>
+          <a href="api-docs.html" class="footer-link">API Docs</a>
         </div>
       </div>
     </div>
@@ -385,36 +409,19 @@
     const contactForm = document.getElementById('contactForm');
     
     contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      
       // Get form data
       const formData = new FormData(contactForm);
       const data = Object.fromEntries(formData);
       
       // Simple validation
       if (!data.firstName || !data.lastName || !data.email || !data.subject || !data.message) {
+        e.preventDefault();
         showToast('Please fill in all required fields', 'error');
         return;
       }
       
-      // Simulate form submission
-      const submitButton = contactForm.querySelector('button[type="submit"]');
-      const originalText = submitButton.innerHTML;
-      
-      submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-      submitButton.disabled = true;
-      
-      setTimeout(() => {
-        // Reset form
-        contactForm.reset();
-        
-        // Reset button
-        submitButton.innerHTML = originalText;
-        submitButton.disabled = false;
-        
-        // Show success message
-        showToast('Message sent successfully! We\'ll get back to you soon.');
-      }, 2000);
+      // Let the form submit naturally to email client
+      showToast('Opening email client...');
     });
 
     // Toast function
